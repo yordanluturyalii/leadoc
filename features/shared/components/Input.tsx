@@ -1,30 +1,28 @@
+// Input.tsx
 'use client';
 
-import { EyeOff } from "lucide-react";
-import { ChangeEvent, useState } from "react";
+import { Eye, EyeOff } from "lucide-react";
+import { InputHTMLAttributes, useState } from "react";
 
 type InputProps = {
     label: string;
-    placeholder?: string;
     helperText?: string;
+    error?: string | null;
     isDisabled?: boolean;
     name: string;
-    type: "text" | "password" | "email";
-    value: string;
-    onChange: (e: ChangeEvent<HTMLInputElement>) => void;
-    error?: string | null;
-};
+    type?: "text" | "password" | "email";
+    placeholder?: string;
+} & InputHTMLAttributes<HTMLInputElement>;
 
 const Input = ({
     label,
-    placeholder,
     helperText,
+    error,
     isDisabled = false,
     name,
-    type,
-    value,
-    onChange,
-    error,
+    type = "text",
+    placeholder,
+    ...registerProps
 }: InputProps) => {
     const hasError = Boolean(error);
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -34,7 +32,6 @@ const Input = ({
 
     const baseClass =
         "w-full h-11 rounded-lg px-3 py-2.5 outline-none transition pr-10";
-
     const stateClass = isDisabled
         ? "bg-neutral-50 text-neutral-400 border border-neutral-100 cursor-not-allowed"
         : hasError
@@ -55,20 +52,19 @@ const Input = ({
                     id={name}
                     name={name}
                     type={inputType}
-                    value={value}
-                    placeholder={placeholder}
                     disabled={isDisabled}
-                    onChange={onChange}
+                    placeholder={placeholder}
+                    {...registerProps}
                     className={`${baseClass} ${stateClass}`}
                 />
 
                 {isPasswordField && !isDisabled && (
-                    <EyeOff
+                    <div
                         onClick={() => setIsPasswordVisible((prev) => !prev)}
-                        width={20}
-                        height={20}
-                        className="cursor-pointer absolute right-3 top-1/2 -translate-y-1/2 text-sm text-neutral-900"
-                    />
+                        className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-900 cursor-pointer"
+                    >
+                        {isPasswordVisible ? <EyeOff size={20} /> : <Eye size={20} />}
+                    </div>
                 )}
             </div>
 
