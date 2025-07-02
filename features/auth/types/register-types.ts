@@ -7,7 +7,7 @@ export type RegisterData = {
     passwordConfirmation: string
 };
 
-export const RegisterSchema: ZodType<RegisterData> = z.object({
+export const RegisterSchema = z.object({
     name: z.string(),
     email: z.string().email(),
     password: z.string().min(8),
