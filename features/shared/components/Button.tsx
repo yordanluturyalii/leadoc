@@ -13,7 +13,7 @@ type ButtonProps = {
 
 const Button = ({text, icon, isDisable, isDark, handleClick}: ButtonProps) => {
   return (
-    <button type='button' className={`bg-white w-full h-11 flex items-center justify-center gap-2.5 cursor-pointer border border-neutral-200 rounded-xl hover:bg-neutral-50 ${isDark && 'bg-neutral-900'}`} onClick={handleClick}>
+    <button type='button' className={`bg-white w-full h-11 flex items-center justify-center gap-2.5 cursor-pointer border border-neutral-200 rounded-xl hover:bg-neutral-50 ${isDark && 'bg-neutral-900 text-white'}`} onClick={handleClick}>
         {
             icon && <Image src={icon} alt='Github Icon' width={24} height={24} />
         }
