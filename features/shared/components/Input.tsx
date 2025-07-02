@@ -1,5 +1,6 @@
 'use client';
 
+import { EyeOff } from "lucide-react";
 import { ChangeEvent, useState } from "react";
 
 type InputProps = {
@@ -62,13 +63,12 @@ const Input = ({
                 />
 
                 {isPasswordField && !isDisabled && (
-                    <button
-                        type="button"
+                    <EyeOff
                         onClick={() => setIsPasswordVisible((prev) => !prev)}
-                        className="absolute right-3 top-1/2 -translate-y-1/2 text-sm text-neutral-500 hover:text-neutral-700 focus:outline-none"
-                    >
-                        {isPasswordVisible ? "Hide" : "Show"}
-                    </button>
+                        width={20}
+                        height={20}
+                        className="cursor-pointer absolute right-3 top-1/2 -translate-y-1/2 text-sm text-neutral-900"
+                    />
                 )}
             </div>
 
