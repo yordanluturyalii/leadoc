@@ -6,14 +6,15 @@ import React from 'react'
 type ButtonProps = {
     text?: string;
     icon?: string;
+    type: "button" | "reset" | "submit";
     isDisable: boolean;
     isDark: boolean;
     handleClick: () => void;
 }
 
-const Button = ({text, icon, isDisable, isDark, handleClick}: ButtonProps) => {
+const Button = ({text, icon, type, isDisable, isDark, handleClick}: ButtonProps) => {
   return (
-    <button type='button' className={`${isDark ? 'bg-neutral-900' : 'bg-white border border-neutral-200 hover:bg-neutral-50'}  w-full h-11 flex items-center justify-center gap-2.5 cursor-pointer rounded-xl`} onClick={handleClick}>
+    <button type={type} className={`${isDark ? 'bg-neutral-900' : 'bg-white border border-neutral-200 hover:bg-neutral-50'}  w-full h-11 flex items-center justify-center gap-2.5 cursor-pointer rounded-xl`} onClick={handleClick}>
         {
             icon && <Image src={icon} alt='Github Icon' width={24} height={24} />
         }
