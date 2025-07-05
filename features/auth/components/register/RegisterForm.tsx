@@ -5,8 +5,23 @@ import { RegisterData, RegisterSchema } from "../../types/register-types"
 import { zodResolver } from "@hookform/resolvers/zod"
 import Input from "@/features/shared/components/Input"
 import Button from "@/features/shared/components/Button"
+import axios from "axios"
+import { useMutation } from "@tanstack/react-query"
+import { api } from "@/features/shared/hooks/useApi"
+
+const createUser = async(data: any) => {
+    const response = await api.post("/api/auth/register", data);
+    return response.data;
+}
 
 const RegisterForm = () => {
+
+    const mutation = useMutation({
+        mutationFn: createUser,
+        onSuccess: (data) => {
+            console.log(data);
+        }
+    })
 
     const {
         register,
@@ -18,7 +33,12 @@ const RegisterForm = () => {
     })
 
     const onSubmit = async(data: RegisterData) => {
-        console.log(data);
+        mutation.mutate({
+            name: data.name,
+            email: data.email,
+            password: data.password,
+            password_confirmation: data.passwordConfirmation
+        });
     }
 
     return (
