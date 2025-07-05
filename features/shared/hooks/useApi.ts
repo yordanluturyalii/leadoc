@@ -9,4 +9,19 @@ const api = axios.create({
     }
 })
 
+api.interceptors.response.use(
+    (response) => response,
+    (error) => {
+        if (error.response) {
+            const customError = {
+                message: error.response.data?.message || 'Request failed',
+                status: error.response.status,
+                errors: error.response.data?.error || {}
+            };
+            return Promise.reject(customError);
+        }
+        return Promise.reject(error);
+    }
+);
+
 export { api };
