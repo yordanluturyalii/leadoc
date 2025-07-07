@@ -14,5 +14,5 @@ export const RegisterSchema = z.object({
     passwordConfirmation: z.string().min(8)
 }).refine(({passwordConfirmation, password}) => password === passwordConfirmation, {
     message: "The password confirmation does not match.",
-    path: ["passwordConfirmation"]
+    path: ["password"]
 });

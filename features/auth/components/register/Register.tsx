@@ -3,11 +3,16 @@
 import Button from "@/features/shared/components/Button"
 import Image from "next/image"
 import RegisterForm from "./RegisterForm"
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
+import { QueryClient, QueryClientProvider, useMutation } from "@tanstack/react-query"
 
 const queryClient = new QueryClient();
 
 const Register = () => {
+
+    const handleGithubAuth = async () => {
+        window.location.replace("http://localhost:3001/api/auth");
+    }
+
     return (
         <QueryClientProvider client={queryClient}>
             <div className="flex justify-between w-full h-full gap-2.5">
@@ -17,7 +22,7 @@ const Register = () => {
                         <h1 className="text-title-md text-neutral-900">Create Account</h1>
                         <p className="text-body-md font-medium text-neutral-500">Turn your repository into clean documentation with just one click</p>
                     </div>
-                    <Button icon="/github.png" text="Continue With Github" handleClick={() => console.log("Login using github")} isDark={false} isDisable={false} type="button" />
+                    <Button icon="/github.png" text="Continue With Github" handleClick={handleGithubAuth} isDark={false} isDisable={false} type="button" />
                     <div className="my-6 w-full">
                         <div className="w-full">
                             <div className="flex items-center gap-4">
