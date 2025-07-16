@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-export type LoginType = {
+export type LoginData = {
  email: string
  password: string
 }
