@@ -9,7 +9,7 @@ type ButtonProps = {
   type: "button" | "reset" | "submit";
   isDisable: boolean;
   isDark: boolean;
-  handleClick: () => void;
+  handleClick?: () => void;
 }
 
 const Button = ({children, icon, type, isDisable, isDark, handleClick}: ButtonProps) => {
