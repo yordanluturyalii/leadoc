@@ -17,9 +17,8 @@ const Login = () => {
             <Image src={'/leadoc-logo.png'} alt='Leadoc' width={110} height={24}/>
           </div>
           <div className="mb-8">
-            <h1 className="text-title-md text-neutral-900">Create account</h1>
-            <p className="text-body-md text-neutral-500">Turn your repository into clean documentation with just one
-              click</p>
+            <h1 className="text-title-md text-neutral-900">Sign in</h1>
+            <p className="text-body-md text-neutral-500">Sign in to your account</p>
           </div>
 
           <Button icon='/github.png' type='button' isDisable={false} isDark={false} handleClick={handleGithubAuth}>
@@ -60,7 +59,11 @@ const Login = () => {
               <span className="text-title-xxs font-semibold text-neutral-500">/5</span>
             </div>
             <span className="w-full text-title-xxs text-neutral-600">
-              "As a developer, I struggled to keep documentation updated with repository changes. Since using this GitHub automation tool, my workflow is more efficient. Every pull request generates clean, updated docs automatically. I can focus on building features instead of formatting documentation. It saves time and keeps our docs consistent."
+              "As a developer, I struggled to keep documentation updated with repository changes.
+              Since using this GitHub automation tool, my workflow is more efficient.
+              Every pull request generates clean, updated docs automatically.
+              I can focus on building features instead of formatting documentation.
+              It saves time and keeps our docs consistent."
             </span>
             <span
                 className="text-body-xl text-neutral-900 font-semibold">John Doe, Backend Engineer @Interland.co</span>
