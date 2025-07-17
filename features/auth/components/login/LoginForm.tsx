@@ -31,6 +31,7 @@ const LoginForm = () => {
             label='Password'
             {...register('password')}
             error={errors.password?.message}
+            isForgotPassword={true}
         />
 
         <div className="mt-2">
