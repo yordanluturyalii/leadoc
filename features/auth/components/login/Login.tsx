@@ -33,11 +33,11 @@ const Login = () => {
           <LoginForm/>
 
           <div className="my-6">
-          <span className="text-body-md text-neutral-500">By creating an account you agree to our {' '}
-            <Link href='/' className='text-purple-600'>Terms of Service</Link>
-            {' '} and {' '}
-            <Link href='/' className='text-purple-600'>Privacy Policy</Link>
-          </span>
+            <span className="text-body-md text-neutral-500">By creating an account you agree to our {' '}
+              <Link href='/' className='text-purple-600'>Terms of Service</Link>
+              {' '} and {' '}
+              <Link href='/' className='text-purple-600'>Privacy Policy</Link>
+            </span>
           </div>
 
           <div className="flex items-center gap-2">
