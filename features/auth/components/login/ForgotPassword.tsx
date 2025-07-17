@@ -4,6 +4,7 @@ import ForgotPasswordForm from '@/features/auth/components/login/ForgotPasswordF
 import Button from '@/features/shared/components/Button';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 const ForgotPassword = () => {
   const router = useRouter();
@@ -22,11 +23,12 @@ const ForgotPassword = () => {
           <ForgotPasswordForm/>
 
           <div className="w-fit mt-6">
-            <Button type='button' isDisable={false} isDark={false} handleClick={() => {
-              router.push('/login')
-            }}>
+            <Link
+                className='w-full p-2 bg-white border border-neutral-200 hover:bg-neutral-50 rounded-xl text-body-md font-semibold'
+                href='/login'
+            >
               Back to Sign in
-            </Button>
+            </Link>
           </div>
         </div>
 
