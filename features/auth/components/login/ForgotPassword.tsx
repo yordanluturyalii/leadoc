@@ -1,15 +1,13 @@
 "use client";
 
-import LoginForm from '@/features/auth/components/login/LoginForm';
+import ForgotPasswordForm from '@/features/auth/components/login/ForgotPasswordForm';
 import Button from '@/features/shared/components/Button';
-import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
-const Login = () => {
+const ForgotPassword = () => {
+  const router = useRouter();
 
-  const handleGithubAuth = async () => {
-    window.location.replace('http://localhost:3001/api/auth')
-  }
   return (
       <div className="flex justify-between w-full h-full gap-2.5">
         <div className='w-full lg:w-1/2 h-full bg-neutral-50 border-[1px] border-neutral-200 md:p-20 rounded-3xl p-5'>
@@ -17,38 +15,18 @@ const Login = () => {
             <Image src={'/leadoc-logo.png'} alt='Leadoc' width={110} height={24}/>
           </div>
           <div className="mb-8">
-            <h1 className="text-title-md text-neutral-900">Sign in</h1>
-            <p className="text-body-md text-neutral-500">Sign in to your account</p>
+            <h1 className="text-title-md text-neutral-900">Reset password</h1>
+            <p className="text-body-md text-neutral-500">Enter your email and we'll send you a password reset link.</p>
           </div>
 
-          <Button icon='/github.png' type='button' isDisable={false} isDark={false} handleClick={handleGithubAuth}>
-            Continue With Github
-          </Button>
+          <ForgotPasswordForm/>
 
-          <div className="my-6 w-full flex items-center gap-3">
-            <span className="text-body-md text-neutral-500">Continue with Email</span>
-            <div className="flex-1 h-px bg-neutral-200"/>
-          </div>
-
-          <LoginForm/>
-
-          <div className="my-6">
-            <span className="text-body-md text-neutral-500">By creating an account you agree to our {' '}
-              <Link href='/' className='text-purple-600'>Terms of Service</Link>
-              {' '} and {' '}
-              <Link href='/' className='text-purple-600'>Privacy Policy</Link>
-            </span>
-          </div>
-
-          <div className="flex items-center gap-2">
-            <span className="text-body-md text-neutral-500">Already have an account?</span>
-            <div className="w-16">
-              <Button type='button' isDisable={false} isDark={false} handleClick={() => {
-                console.log('hai')
-              }}>
-                Sign In
-              </Button>
-            </div>
+          <div className="w-fit mt-6">
+            <Button type='button' isDisable={false} isDark={false} handleClick={() => {
+              router.push('/login')
+            }}>
+              Back to Sign in
+            </Button>
           </div>
         </div>
 
@@ -73,4 +51,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default ForgotPassword;
