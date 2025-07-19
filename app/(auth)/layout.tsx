@@ -9,7 +9,7 @@ export default function AuthLayout({ children }: Readonly<{ children: React.Reac
           <div className="hidden w-1/2 lg:flex flex-col justify-end rounded-3xl p-6">
             <div className="flex flex-col gap-6">
               <div className="flex items-center gap-1">
-                <span className="text-title-md font-semibold text-neutral-900 leading-8">4.8</span>
+                <span className="text-title-md font-semibold text-neutral-900 leading-9">4.8</span>
                 <span className="text-title-xxs font-semibold text-neutral-500">/5</span>
               </div>
               <span className="w-full text-title-xxs text-neutral-600">
