@@ -29,6 +29,7 @@ const LoginForm = () => {
         />
         <Input
             label='Password'
+            type='password'
             {...register('password')}
             error={errors.password?.message}
             isForgotPassword={true}
