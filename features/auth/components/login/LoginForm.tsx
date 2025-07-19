@@ -1,4 +1,4 @@
-"use client";
+ "use client";
 
 import React, { FormEvent } from 'react';
 import Input from '@/features/shared/components/Input';
