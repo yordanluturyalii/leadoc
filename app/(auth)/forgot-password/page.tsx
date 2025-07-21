@@ -6,7 +6,7 @@ export default function LoginPage() {
   return (
       <div className='w-full lg:w-1/2 h-full bg-neutral-50 border-[1px] border-neutral-200 md:p-20 rounded-3xl p-5'>
         <div className="mb-10">
-          <Image src={'/leadoc-logo.png'} alt='Leadoc' width={110} height={24}/>
+          <Image src={'/leadoc-logo.svg'} alt='Leadoc' width={110} height={24}/>
         </div>
         <div className="mb-8">
           <h1 className="text-title-md text-neutral-900">Reset password</h1>
