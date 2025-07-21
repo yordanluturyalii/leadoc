@@ -29,7 +29,7 @@ const ForgotPasswordForm = () => {
 
         <div className="mt-2">
           <Button type='submit' isDisable={false} isDark={true}>
-            Continue
+            Send Link
           </Button>
         </div>
       </form>

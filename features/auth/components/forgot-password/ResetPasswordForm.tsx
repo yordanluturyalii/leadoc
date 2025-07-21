@@ -18,7 +18,7 @@ const ResetPasswordForm = () => {
 
         <div className="mt-2">
           <Button type='submit' isDisable={false} isDark={true}>
-            Reset Password
+            Set New Password
           </Button>
         </div>
       </form>
