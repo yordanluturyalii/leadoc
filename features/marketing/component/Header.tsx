@@ -53,38 +53,7 @@ const Header = () => {
               >
                 <span>Company</span>
 
-                <div
-                    className="absolute top-full left-0 w-screen bg-white py-10 px-8 flex justify-between opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                  <div>
-                    <h3 className="text-neutral-500 pl-2">COMPANY</h3>
-                    <div className="flex gap-14 mt-6">
-                      <Link href='/about' className="group hover:bg-neutral-100 duration-500 p-2 w-[400px]">
-                        <h3 className="mb-3">About</h3>
-                        <p className="text-neutral-500 group-hover:text-neutral-900 duration-500">
-                          Discover what sparked Leadoc and how we're helping developers write better READMEs with less
-                          effort.
-                        </p>
-                      </Link>
-                      <Link href='/contact' className="group hover:bg-neutral-100 duration-500 p-2 w-[350px]">
-                        <h3 className="mb-3">Contact</h3>
-                        <p className="text-neutral-500 group-hover:text-neutral-900 duration-500">
-                          Have questions, feedback, or just want to say hi? We’d love to hear from you.
-                        </p>
-                      </Link>
-                    </div>
-                  </div>
-
-                  <div className='w-[160px]'>
-                    <h3 className="text-neutral-500">SOCIALS</h3>
-                    <ul className='mt-7 flex flex-col gap-2'>
-                      {socialMedia.map((social) => (
-                          <li key={social.name}>
-                            <Link href={social.link}>{social.name}</Link>
-                          </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
+                <HeaderHover/>
               </li>
               <li className="">
                 <Link href='/'>
@@ -100,54 +69,7 @@ const Header = () => {
           </nav>
 
           {menu && (
-              <div className='xl:hidden h-[92dvh] flex flex-col justify-between p-10 transition-opacity duration-300'>
-                <ul className="flex flex-col gap-4">
-                  <li className="">
-                    <Link href='/'>
-                      Features
-                    </Link>
-                  </li>
-
-                  <div className='bg-neutral-100 h-px w-full'/>
-
-                  <li className="">
-                    <Link href='/'>
-                      Pricing
-                    </Link>
-                  </li>
-
-                  <div className='bg-neutral-100 h-px w-full'/>
-
-                  <button
-                      className="flex justify-between items-center gap-7 cursor-pointer"
-                      type='button'
-                      onClick={companyHandler}
-                  >
-                    <span>Company</span>
-                    {company ? <ChevronUp color="#171717"/> : <ChevronDown color="#171717"/>}
-                  </button>
-                  {company && (
-                      <div className="flex flex-col gap-3 text-neutral-600">
-                        <Link href='/about'>About</Link>
-                        <Link href='/about'>Contact</Link>
-                      </div>
-                  )}
-                  <div className='bg-neutral-100 h-px w-full'/>
-
-                  <li className="">
-                    <Link href='/'>
-                      Changelog
-                    </Link>
-                  </li>
-                </ul>
-
-                <div className="flex flex-col gap-4 w-full text-center font-semibold">
-                  <Link href='/login' className="py-2 border border-neutral-200 rounded-lg">
-                    Sign in
-                  </Link>
-                  <Link href='/signup' className="py-2 bg-neutral-900 rounded-lg text-white">Sign Up</Link>
-                </div>
-              </div>
+              <HeaderHamburger company={company} companyHandler={companyHandler}/>
           )}
         </header>
 
@@ -157,5 +79,95 @@ const Header = () => {
       </>
   );
 };
+
+const HeaderHover = () => {
+  return (
+      <div
+          className="absolute top-full left-0 w-screen bg-white py-10 px-8 flex justify-between opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+        <div>
+          <h3 className="text-neutral-500 pl-2">COMPANY</h3>
+          <div className="flex gap-14 mt-6">
+            <Link href='/about' className="group hover:bg-neutral-100 duration-500 p-2 w-[400px]">
+              <h3 className="mb-3">About</h3>
+              <p className="text-neutral-500 group-hover:text-neutral-900 duration-500">
+                Discover what sparked Leadoc and how we're helping developers write better READMEs with less
+                effort.
+              </p>
+            </Link>
+            <Link href='/contact' className="group hover:bg-neutral-100 duration-500 p-2 w-[350px]">
+              <h3 className="mb-3">Contact</h3>
+              <p className="text-neutral-500 group-hover:text-neutral-900 duration-500">
+                Have questions, feedback, or just want to say hi? We’d love to hear from you.
+              </p>
+            </Link>
+          </div>
+        </div>
+
+        <div className='w-[160px]'>
+          <h3 className="text-neutral-500">SOCIALS</h3>
+          <ul className='mt-7 flex flex-col gap-2'>
+            {socialMedia.map((social) => (
+                <li key={social.name}>
+                  <Link href={social.link}>{social.name}</Link>
+                </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+  )
+}
+
+const HeaderHamburger = ({company, companyHandler}: {company: boolean, companyHandler: () => void}) => {
+  return (
+      <div className='xl:hidden h-[92dvh] flex flex-col justify-between p-10 transition-opacity duration-300'>
+        <ul className="flex flex-col gap-4">
+          <li className="">
+            <Link href='/'>
+              Features
+            </Link>
+          </li>
+
+          <div className='bg-neutral-100 h-px w-full'/>
+
+          <li className="">
+            <Link href='/'>
+              Pricing
+            </Link>
+          </li>
+
+          <div className='bg-neutral-100 h-px w-full'/>
+
+          <button
+              className="flex justify-between items-center gap-7 cursor-pointer"
+              type='button'
+              onClick={companyHandler}
+          >
+            <span>Company</span>
+            {company ? <ChevronUp color="#171717"/> : <ChevronDown color="#171717"/>}
+          </button>
+          {company && (
+              <div className="flex flex-col gap-3 text-neutral-600">
+                <Link href='/about'>About</Link>
+                <Link href='/about'>Contact</Link>
+              </div>
+          )}
+          <div className='bg-neutral-100 h-px w-full'/>
+
+          <li className="">
+            <Link href='/'>
+              Changelog
+            </Link>
+          </li>
+        </ul>
+
+        <div className="flex flex-col gap-4 w-full text-center font-semibold">
+          <Link href='/login' className="py-2 border border-neutral-200 rounded-lg">
+            Sign in
+          </Link>
+          <Link href='/signup' className="py-2 bg-neutral-900 rounded-lg text-white">Sign Up</Link>
+        </div>
+      </div>
+  )
+}
 
 export default Header;
