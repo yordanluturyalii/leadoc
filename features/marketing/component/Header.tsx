@@ -21,54 +21,56 @@ const Header = () => {
 
   return (
       <>
-        <header className='fixed w-full top-0 left-0 bg-neutral-50 z-50'>
-          <nav className="flex justify-between items-center py-5 px-10">
-            <Link href='/'>
-              <Image src='/leadoc-logo.svg' alt='leadoc' height={24} width={100}/>
-            </Link>
+        <header className='fixed w-full top-0 left-0 bg-neutral-50 z-50 flex justify-center'>
+          <div className="w-full max-w-[1200px]">
+            <nav className="flex justify-between items-center py-5 px-10">
+              <Link href='/'>
+                <Image src='/leadoc-logo.svg' alt='leadoc' height={24} width={100}/>
+              </Link>
 
-            <button
-                className="xl:hidden cursor-pointer"
-                onClick={menuHandler}
-                aria-label="Toggle menu"
-                type='button'
-            >
-              {menu ? <X/> : <Menu/>}
-            </button>
-
-            <ul className="hidden xl:flex gap-6">
-              <li className="">
-                <Link href='#'>
-                  Features
-                </Link>
-              </li>
-              <li className="">
-                <Link href='/'>
-                  Pricing
-                </Link>
-              </li>
-              <li className="group cursor-pointer"
-                  onMouseEnter={() => setShowDropdown(true)}
-                  onMouseLeave={() => setShowDropdown(false)}
+              <button
+                  className="xl:hidden cursor-pointer"
+                  onClick={menuHandler}
+                  aria-label="Toggle menu"
+                  type='button'
               >
-                <span>Company</span>
+                {menu ? <X/> : <Menu/>}
+              </button>
 
-                <HeaderHover/>
-              </li>
-              <li className="">
-                <Link href='/'>
-                  Changelog
-                </Link>
-              </li>
-            </ul>
+              <ul className="hidden xl:flex gap-6">
+                <li className="">
+                  <Link href='#'>
+                    Features
+                  </Link>
+                </li>
+                <li className="">
+                  <Link href='/'>
+                    Pricing
+                  </Link>
+                </li>
+                <li className="group cursor-pointer"
+                    onMouseEnter={() => setShowDropdown(true)}
+                    onMouseLeave={() => setShowDropdown(false)}
+                >
+                  <span>Company</span>
 
-            <div className="hidden xl:flex gap-4 items-center font-semibold">
-              <Link href='/login' className="py-2 px-3 border border-neutral-200 rounded-lg">Sign in</Link>
-              <Link href='/signup' className="py-2 px-3 bg-neutral-900 rounded-lg text-white">Sign Up</Link>
-            </div>
-          </nav>
+                  <HeaderHover/>
+                </li>
+                <li className="">
+                  <Link href='/'>
+                    Changelog
+                  </Link>
+                </li>
+              </ul>
 
-          <HeaderHamburger menu={menu} company={company} companyHandler={companyHandler}/>
+              <div className="hidden xl:flex gap-4 items-center font-semibold">
+                <Link href='/login' className="py-2 px-3 border border-neutral-200 rounded-lg">Sign in</Link>
+                <Link href='/signup' className="py-2 px-3 bg-neutral-900 rounded-lg text-white">Sign Up</Link>
+              </div>
+            </nav>
+
+            <HeaderHamburger menu={menu} company={company} companyHandler={companyHandler}/>
+          </div>
 
         </header>
 
@@ -117,11 +119,16 @@ const HeaderHover = () => {
   )
 }
 
-const HeaderHamburger = ({ menu, company, companyHandler }: { menu: boolean, company: boolean, companyHandler: () => void }) => {
+const HeaderHamburger = ({ menu, company, companyHandler }: {
+  menu: boolean,
+  company: boolean,
+  companyHandler: () => void
+}) => {
   return (
-      <div className={`flex flex-col justify-between p-10 transition-opacity duration-700 xl:hidden overflow-hidden ease-in-out ${
-        menu ? 'h-[92dvh] opacity-100 visible' : ' opacity-0 invisible hidden'
-      }`}>
+      <div
+          className={`flex flex-col justify-between p-10 transition-opacity duration-700 xl:hidden overflow-hidden ease-in-out ${
+              menu ? 'h-[92dvh] opacity-100 visible' : ' opacity-0 invisible hidden'
+          }`}>
         <ul className="flex flex-col gap-4">
           <li className="">
             <Link href='/'>
