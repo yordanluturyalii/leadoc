@@ -24,7 +24,7 @@ const Header = () => {
         <header className='fixed w-full top-0 left-0 bg-neutral-50 z-50 flex justify-center'>
           <div className="w-full max-w-[1200px]">
             <nav className="flex justify-between items-center py-5 px-10">
-              <Link href='/'>
+              <Link href='/' className='w-[161px]'>
                 <Image src='/leadoc-logo.svg' alt='leadoc' height={24} width={100}/>
               </Link>
 
@@ -37,7 +37,7 @@ const Header = () => {
                 {menu ? <X/> : <Menu/>}
               </button>
 
-              <ul className="hidden xl:flex gap-6">
+              <ul className="hidden xl:flex gap-6 font-medium">
                 <li className="">
                   <Link href='#'>
                     Features
@@ -84,36 +84,38 @@ const Header = () => {
 const HeaderHover = () => {
   return (
       <div
-          className="absolute top-full left-0 w-screen bg-white py-10 px-8 flex justify-between opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50"
+          className="absolute top-full left-0 w-screen bg-white py-10 px-8 flex justify-center opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50"
       >
-        <div>
-          <h3 className="text-neutral-500 pl-2">COMPANY</h3>
-          <div className="flex gap-14 mt-6">
-            <Link href='/about' className="group hover:bg-neutral-100 duration-500 p-2 w-[400px]">
-              <h3 className="mb-3">About</h3>
-              <p className="text-neutral-500 group-hover:text-neutral-900 duration-500">
-                Discover what sparked Leadoc and how we're helping developers write better READMEs with less
-                effort.
-              </p>
-            </Link>
-            <Link href='/contact' className="group hover:bg-neutral-100 duration-500 p-2 w-[350px]">
-              <h3 className="mb-3">Contact</h3>
-              <p className="text-neutral-500 group-hover:text-neutral-900 duration-500">
-                Have questions, feedback, or just want to say hi? We’d love to hear from you.
-              </p>
-            </Link>
+        <div className="w-full max-w-[1200px] flex justify-between">
+          <div>
+            <h3 className="text-neutral-500 pl-2">COMPANY</h3>
+            <div className="flex gap-14 mt-6">
+              <Link href='/about' className="group hover:bg-neutral-100 duration-500 p-2 w-[400px]">
+                <h3 className="mb-3">About</h3>
+                <p className="text-neutral-500 group-hover:text-neutral-900 duration-500">
+                  Discover what sparked Leadoc and how we're helping developers write better READMEs with less
+                  effort.
+                </p>
+              </Link>
+              <Link href='/contact' className="group hover:bg-neutral-100 duration-500 p-2 w-[350px]">
+                <h3 className="mb-3">Contact</h3>
+                <p className="text-neutral-500 group-hover:text-neutral-900 duration-500">
+                  Have questions, feedback, or just want to say hi? We’d love to hear from you.
+                </p>
+              </Link>
+            </div>
           </div>
-        </div>
 
-        <div className='w-[160px]'>
-          <h3 className="text-neutral-500">SOCIALS</h3>
-          <ul className='mt-7 flex flex-col gap-2'>
-            {socialMedia.map((social) => (
-                <li key={social.name}>
-                  <Link href={social.link}>{social.name}</Link>
-                </li>
-            ))}
-          </ul>
+          <div className='w-[160px]'>
+            <h3 className="text-neutral-500">SOCIALS</h3>
+            <ul className='mt-7 flex flex-col gap-2'>
+              {socialMedia.map((social) => (
+                  <li key={social.name}>
+                    <Link href={social.link}>{social.name}</Link>
+                  </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
   )

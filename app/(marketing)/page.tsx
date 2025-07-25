@@ -23,8 +23,9 @@ export default function Home() {
 
           <div className="relative">
             <div
-                className="absolute -bottom-3 top-2 inset-0 bg-gradient-to-r from-[#B151FF] via-[#FA0011] to-[#B151FF] blur-md"/>
-            <Link href='/' className='relative w-fit py-3 px-4 bg-neutral-900 rounded-lg text-neutral-200 font-medium'>
+                className="absolute -bottom-1 top-6 inset-0 bg-gradient-to-r from-[#B151FF] via-[#FA0011] to-[#B151FF] blur-md"
+            />
+            <Link href='/' className='relative block w-fit h-[44px] py-3 px-4 bg-neutral-900 rounded-lg text-neutral-200 font-medium'>
               Generate Your README Now
             </Link>
           </div>
@@ -54,11 +55,12 @@ export default function Home() {
 
           <h1 className="text-title-sm md:text-title-md lg:text-title-xl lg:w-[856px]">
             Leadoc turns your code
-            into a clean, professional README, fast, simple,
+            into a clean, <br/>
+            professional README, fast, simple,
             no setup.
           </h1>
 
-          <h2 className="text-title-sm text-neutral-500">
+          <h2 className="text-title-sm text-neutral-500 md:text-title-md lg:text-title-xl">
             We’re just getting started.
           </h2>
         </section>
@@ -188,7 +190,7 @@ export default function Home() {
             and use them however you like.
           </h1>
 
-          <h2 className="text-title-sm text-neutral-500">
+          <h2 className="text-title-sm text-neutral-500 md:text-title-md lg:text-title-xl">
             it's that simple.
           </h2>
         </section>
@@ -197,7 +199,7 @@ export default function Home() {
         <section className="py-20 px-5 flex flex-col gap-20 items-center md:px-10">
           <div className='flex flex-col items-center text-center gap-9'>
             <TitleGradient className='from-green-100 via-orange-300 to-green-100'>Quick Answers</TitleGradient>
-            <h1 className="text-title-sm">Quick answers to help you get started.</h1>
+            <h1 className="text-title-sm md:text-title-md lg:text-title-xl">Quick answers to help you get started.</h1>
           </div>
 
           <div className="grid gap-2">
@@ -255,7 +257,7 @@ export default function Home() {
             </Accordion>
           </div>
 
-          <span className="flex gap-3 text-title-xxs">
+          <span className="flex gap-3 text-title-xxs md:text-title-sm">
             Something unclear?
             <Link href='/' className='text-purple-600'>Feel free to ask.</Link>
           </span>
@@ -275,12 +277,13 @@ export default function Home() {
 
                 <div className="relative">
                   <div
-                      className="absolute -bottom-3 top-2 inset-0 bg-gradient-to-r from-[#B151FF] via-[#FA0011] to-[#B151FF] blur-md"
+                      className="absolute -bottom-1 top-6 inset-0 bg-gradient-to-r from-[#B151FF] via-[#FA0011] to-[#B151FF] blur-md"
                   />
-                  <Link href='/' className='relative w-fit py-3 px-4 bg-white rounded-lg text-neutral-900 font-medium'>
+                  <Link href='/' className='relative block h-[44px] py-3 px-4 bg-white rounded-lg text-neutral-900 font-medium'>
                     Get Started for Free
                   </Link>
                 </div>
+
               </div>
             </div>
           </div>

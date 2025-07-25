@@ -6,7 +6,7 @@ export default function LayoutMarketing({ children }: { children: React.ReactNod
   return (
       <div className='bg-neutral-50 text-body-md'>
         <Header/>
-        <main className='xl:mt-20 mt-16'>
+        <main className='xl:pt-20 pt-16'>
           {children}
         </main>
         <Footer/>
