@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { ChevronDown, ChevronUp, CircleMinus, CirclePlus, Menu, X } from 'lucide-react';
+import { ChevronDown, ChevronUp, Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { socialMedia } from '@/features/marketing/lib/constant';
 
