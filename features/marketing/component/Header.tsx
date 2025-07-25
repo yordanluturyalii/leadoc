@@ -68,9 +68,8 @@ const Header = () => {
             </div>
           </nav>
 
-          {menu && (
-              <HeaderHamburger company={company} companyHandler={companyHandler}/>
-          )}
+          <HeaderHamburger menu={menu} company={company} companyHandler={companyHandler}/>
+
         </header>
 
         <div className={`transition-all duration-300 ${
@@ -118,9 +117,11 @@ const HeaderHover = () => {
   )
 }
 
-const HeaderHamburger = ({ company, companyHandler }: { company: boolean, companyHandler: () => void }) => {
+const HeaderHamburger = ({ menu, company, companyHandler }: { menu: boolean, company: boolean, companyHandler: () => void }) => {
   return (
-      <div className='xl:hidden h-[92dvh] flex flex-col justify-between p-10 transition-all duration-300'>
+      <div className={`flex flex-col justify-between p-10 transition-opacity duration-700 xl:hidden overflow-hidden ease-in-out ${
+        menu ? 'h-[92dvh] opacity-100 visible' : ' opacity-0 invisible hidden'
+      }`}>
         <ul className="flex flex-col gap-4">
           <li className="">
             <Link href='/'>
