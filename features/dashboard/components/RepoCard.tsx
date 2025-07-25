@@ -1,15 +1,18 @@
+'use client';
+
 import { formatDistanceToNow } from "date-fns"
 
 type RepoCardProps = {
     name: string;
     visibility: "Private" | "Public";
     status: boolean;
-    updatedAt?: Date
+    updatedAt?: Date;
+    handleClick?: () => void;
 }
 
-const RepoCard = ({ name, visibility, status, updatedAt }: RepoCardProps) => {
+const RepoCard = ({ name, visibility, status, updatedAt, handleClick }: RepoCardProps) => {
     return (
-        <div className="border border-neutral-100 bg-white flex flex-col gap-3 justify-between w-full sm:h-[118px] h-28 p-3 rounded-xl">
+        <div className="border border-neutral-100 bg-white flex flex-col gap-3 justify-between w-full sm:h-[118px] h-28 p-3 rounded-xl cursor-pointer" onClick={handleClick}>
             <div className="flex flex-col">
                 <h1 className="text-neutral-900 font-semibold text-body-xl">{name}</h1>
                 <span className="text-neutral-500 text-body-sm font-medium">{visibility} repository</span>
