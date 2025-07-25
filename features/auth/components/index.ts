@@ -1,1 +1,2 @@
-export * from './login/LoginForm'
+export * from './forgot-password/ForgotPasswordForm'
+export * from './forgot-password/ResetPasswordForm'
