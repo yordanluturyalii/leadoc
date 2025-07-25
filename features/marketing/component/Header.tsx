@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { ChevronDown, ChevronUp, Menu, X } from 'lucide-react';
+import { ChevronDown, ChevronUp, CircleMinus, CirclePlus, Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { socialMedia } from '@/features/marketing/lib/constant';
 
@@ -21,7 +21,7 @@ const Header = () => {
 
   return (
       <>
-        <header className='fixed w-full top-0 left-0 bg-white z-50'>
+        <header className='fixed w-full top-0 left-0 bg-neutral-50 z-50'>
           <nav className="flex justify-between items-center py-5 px-10">
             <Link href='/'>
               <Image src='/leadoc-logo.svg' alt='leadoc' height={24} width={100}/>
@@ -73,9 +73,9 @@ const Header = () => {
           )}
         </header>
 
-        {showDropdown && (
-            <div className='fixed inset-0 bg-black/35 backdrop-blur-sm z-40'/>
-        )}
+        <div className={`transition-all duration-300 ${
+            showDropdown ? 'bg-black/35 backdrop-blur-sm fixed inset-0 z-40' : ''
+        }`}/>
       </>
   );
 };
@@ -83,7 +83,8 @@ const Header = () => {
 const HeaderHover = () => {
   return (
       <div
-          className="absolute top-full left-0 w-screen bg-white py-10 px-8 flex justify-between opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+          className="absolute top-full left-0 w-screen bg-white py-10 px-8 flex justify-between opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50"
+      >
         <div>
           <h3 className="text-neutral-500 pl-2">COMPANY</h3>
           <div className="flex gap-14 mt-6">
@@ -117,9 +118,9 @@ const HeaderHover = () => {
   )
 }
 
-const HeaderHamburger = ({company, companyHandler}: {company: boolean, companyHandler: () => void}) => {
+const HeaderHamburger = ({ company, companyHandler }: { company: boolean, companyHandler: () => void }) => {
   return (
-      <div className='xl:hidden h-[92dvh] flex flex-col justify-between p-10 transition-opacity duration-300'>
+      <div className='xl:hidden h-[92dvh] flex flex-col justify-between p-10 transition-all duration-300'>
         <ul className="flex flex-col gap-4">
           <li className="">
             <Link href='/'>
@@ -138,19 +139,26 @@ const HeaderHamburger = ({company, companyHandler}: {company: boolean, companyHa
           <div className='bg-neutral-100 h-px w-full'/>
 
           <button
-              className="flex justify-between items-center gap-7 cursor-pointer"
               type='button'
               onClick={companyHandler}
           >
-            <span>Company</span>
-            {company ? <ChevronUp color="#171717"/> : <ChevronDown color="#171717"/>}
-          </button>
-          {company && (
-              <div className="flex flex-col gap-3 text-neutral-600">
-                <Link href='/about'>About</Link>
-                <Link href='/about'>Contact</Link>
+            <div
+                className="w-full flex justify-between items-center"
+            >
+              <span>Company</span>
+              {company ? <ChevronUp color="#171717"/> : <ChevronDown color="#171717"/>}
+            </div>
+
+            <div className={`grid overflow-hidden transition-all duration-300 ${
+                company ? 'grid-rows-[1fr] opacity-100 mt-7' : 'grid-rows-[0fr] opacity-0'
+            }`}>
+              <div className="text-left overflow-hidden text-neutral-600 font-medium flex flex-col gap-3">
+                <Link className='overflow-hidden' href='/abouhait'>About</Link>
+                <Link className='overflow-hidden' href='/about'>Contact</Link>
               </div>
-          )}
+            </div>
+          </button>
+
           <div className='bg-neutral-100 h-px w-full'/>
 
           <li className="">
