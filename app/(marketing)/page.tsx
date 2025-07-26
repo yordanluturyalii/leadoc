@@ -2,6 +2,8 @@ import Link from 'next/link';
 import { Play } from 'lucide-react';
 import { TitleGradient } from '@/features/marketing/component/TitleGradient';
 import { Accordion } from '@/features/marketing/component/Accordion';
+import { useGSAP } from '@gsap/react';
+import { TitleAnimation } from '@/features/marketing/component/TitleAnimation';
 
 export default function Home() {
   return (
@@ -15,7 +17,7 @@ export default function Home() {
           <div className='text-center flex flex-col gap-5 items-center'>
             <h1 className="text-title-md md:text-5xl lg:text-[64px] lg:w-[920px]">The fastest way to turn code into
               clear documentation</h1>
-            <p className="text-neutral-600 max-md:font-medium text-body-xl md:w-[536px]">
+            <p className="text-neutral-600 md:text-body-xl lg:text-lg max-md:font-medium md:w-[536px]">
               Generate your README without writing it manually. One-click, smart
               summaries, GitHub sync, and live editing.
             </p>
@@ -48,22 +50,22 @@ export default function Home() {
         </section>
 
         {/* About Section */}
-        <section className="h-screen px-5 flex flex-col items-center justify-center gap-9 text-center md:px-10">
+        <TitleAnimation section='about'>
           <TitleGradient className="from-indigo-100 via-pink-300 to-indigo-100">
             Instant README
           </TitleGradient>
 
-          <h1 className="text-title-sm md:text-title-md lg:text-title-xl lg:w-[856px]">
+          <h1 className="about text-title-sm md:text-title-md lg:text-title-xl lg:w-[856px]">
             Leadoc turns your code
-            into a clean, <br/>
+            into a clean, <br className='max-md:hidden'/>
             professional README, fast, simple,
             no setup.
           </h1>
 
-          <h2 className="text-title-sm text-neutral-500 md:text-title-md lg:text-title-xl">
+          <h2 className="about text-title-sm text-neutral-500 md:text-title-md lg:text-title-xl">
             We’re just getting started.
           </h2>
-        </section>
+        </TitleAnimation>
 
         {/* Futures Section */}
         <section className="py-20 px-5 bg-neutral-100 md:px-10 flex flex-col items-center">
@@ -74,9 +76,9 @@ export default function Home() {
               </TitleGradient>
               <div className="mt-9 md:w-[680px]">
                 <h1 className="text-title-sm mb-3 md:text-title-md lg:text-title-xl">
-                  Explore features that make creating your README easier.
+                  Explore features that make <br className='max-lg:hidden'/> creating your README easier.
                 </h1>
-                <p className="text-neutral-500">
+                <p className="text-neutral-500 lg:text-body-xl">
                   Leadoc gives you the tools to save time, stay consistent, and focus on your code. From the Smart
                   Section
                   Picker to All Language Support, everything is built to simplify your documentation process.
@@ -141,7 +143,7 @@ export default function Home() {
                   </TitleGradient>
 
                   <h2 className="max-md:text-title-xxs max-lg:max-w-[400px] py-4 md:text-title-sm lg:text-title-md lg:py-6">
-                    Make your README sound great. Let AI handle the writing.
+                    Make your README sound great. <br className='max-md:hidden'/> Let AI handle the writing.
                   </h2>
 
                   <p className="max-md:text-body-sm md:font-medium">
@@ -179,21 +181,21 @@ export default function Home() {
         </section>
 
         {/* Pricing Section */}
-        <section className="h-screen px-5 flex flex-col items-center justify-center gap-9 text-center md:px-10">
+        <TitleAnimation section="pricing">
           <TitleGradient className="from-purple-100 via-green-300 to-purple-100">
             Pricing
           </TitleGradient>
 
-          <h1 className="text-title-sm md:text-title-md lg:text-title-xl lg:w-[856px]">
+          <h1 className="pricing text-title-sm md:text-title-md lg:text-title-xl lg:w-[856px]">
             Pay as you go. <br/>
             Buy credits when you need them <br/>
             and use them however you like.
           </h1>
 
-          <h2 className="text-title-sm text-neutral-500 md:text-title-md lg:text-title-xl">
+          <h2 className="pricing text-title-sm text-neutral-500 md:text-title-md lg:text-title-xl">
             it's that simple.
           </h2>
-        </section>
+        </TitleAnimation>
 
         {/* Quick Answers */}
         <section className="py-20 px-5 flex flex-col gap-20 items-center md:px-10">
