@@ -1,9 +1,8 @@
 import Link from 'next/link';
 import { Play } from 'lucide-react';
+import { Accordion } from '@/features/shared/components';
 import { TitleGradient } from '@/features/marketing/component/TitleGradient';
-import { Accordion } from '@/features/marketing/component/Accordion';
-import { useGSAP } from '@gsap/react';
-import { TitleAnimation } from '@/features/marketing/component/TitleAnimation';
+import { FadingSection } from '@/features/marketing/component/FadingSection';
 
 export default function Home() {
   return (
@@ -50,7 +49,7 @@ export default function Home() {
         </section>
 
         {/* About Section */}
-        <TitleAnimation section='about'>
+        <FadingSection section='about'>
           <TitleGradient className="from-indigo-100 via-pink-300 to-indigo-100">
             Instant README
           </TitleGradient>
@@ -65,10 +64,10 @@ export default function Home() {
           <h2 className="about text-title-sm text-neutral-500 md:text-title-md lg:text-title-xl">
             We’re just getting started.
           </h2>
-        </TitleAnimation>
+        </FadingSection>
 
         {/* Futures Section */}
-        <section className="py-20 px-5 bg-neutral-100 md:px-10 flex flex-col items-center">
+        <section className="futures py-20 px-5 md:px-10 flex flex-col items-center">
           <div className="max-w-[1200px]">
             <div className='pb-16 lg:pb-20'>
               <TitleGradient className='from-purple-100 via-green-300 to-purple-100'>
@@ -89,7 +88,9 @@ export default function Home() {
             <section className="flex flex-col gap-[60px]">
               {/* Smart Section Picker */}
               <div className='flex flex-col justify-center gap-11 lg:flex-row-reverse lg:items-end lg:gap-20'>
-                <div className="aspect-square w-full lg:w-[588px] lg:h-[588px] bg-neutral-50 rounded-xl"></div>
+                <div className="aspect-square w-full lg:w-[588px] lg:h-[588px] bg-neutral-50 rounded-xl">
+                  <img src="/gif/Smart-section-picker.gif" alt="smart-section" className='w-full h-full object-center object-cover'/>
+                </div>
 
                 <div>
                   <TitleGradient className='from-green-100 via-purple-300 to-green-100'>
@@ -112,7 +113,9 @@ export default function Home() {
 
               {/* Custom Sections */}
               <div className='flex flex-col justify-center gap-11 lg:flex-row-reverse lg:items-end lg:gap-20'>
-                <div className="aspect-square w-full lg:w-[588px] lg:h-[588px] bg-neutral-50 rounded-xl"></div>
+                <div className="aspect-square w-full lg:w-[588px] lg:h-[588px] bg-neutral-50 rounded-xl">
+                  <img src="/gif/Custom-Sections.gif" alt="smart-section" className='w-full h-full object-center object-cover'/>
+                </div>
 
                 <div>
                   <TitleGradient className='from-purple-100 via-green-300 to-purple-100'>
@@ -135,7 +138,9 @@ export default function Home() {
 
               {/* AI Summary */}
               <div className='flex flex-col justify-center gap-11 lg:flex-row-reverse lg:items-end lg:gap-20'>
-                <div className="aspect-square w-full lg:w-[588px] lg:h-[588px] bg-neutral-50 rounded-xl"></div>
+                <div className="aspect-square w-full lg:w-[588px] lg:h-[588px] bg-neutral-50 rounded-xl">
+                  <img src="/gif/AI-Summary.gif" alt="smart-section" className='w-full h-full object-center object-cover'/>
+                </div>
 
                 <div>
                   <TitleGradient className='from-green-100 via-orange-300 to-green-100'>
@@ -157,7 +162,9 @@ export default function Home() {
 
               {/* All Language Support */}
               <div className='flex flex-col justify-center gap-11 lg:flex-row-reverse lg:items-end lg:gap-20'>
-                <div className="aspect-square w-full lg:w-[588px] lg:h-[588px] bg-neutral-50 rounded-xl"></div>
+                <div className="aspect-square w-full lg:w-[588px] lg:h-[588px] bg-neutral-50 rounded-xl">
+                  <img src="/gif/All-Language-Support.gif" alt="smart-section" className='w-full h-full object-center object-cover'/>
+                </div>
 
                 <div>
                   <TitleGradient className='from-indigo-100 via-pink-300 to-indigo-100'>
@@ -181,7 +188,7 @@ export default function Home() {
         </section>
 
         {/* Pricing Section */}
-        <TitleAnimation section="pricing">
+        <FadingSection section="pricing">
           <TitleGradient className="from-purple-100 via-green-300 to-purple-100">
             Pricing
           </TitleGradient>
@@ -195,7 +202,7 @@ export default function Home() {
           <h2 className="pricing text-title-sm text-neutral-500 md:text-title-md lg:text-title-xl">
             it's that simple.
           </h2>
-        </TitleAnimation>
+        </FadingSection>
 
         {/* Quick Answers */}
         <section className="py-20 px-5 flex flex-col gap-20 items-center md:px-10">
