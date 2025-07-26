@@ -3,6 +3,7 @@ import { Play } from 'lucide-react';
 import { Accordion } from '@/features/shared/components';
 import { TitleGradient } from '@/features/marketing/component/TitleGradient';
 import { FadingSection } from '@/features/marketing/component/FadingSection';
+import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -89,7 +90,7 @@ export default function Home() {
               {/* Smart Section Picker */}
               <div className='flex flex-col justify-center gap-11 lg:flex-row-reverse lg:items-end lg:gap-20'>
                 <div className="aspect-square w-full lg:w-[588px] lg:h-[588px] bg-neutral-50 rounded-xl">
-                  <img src="/gif/Smart-section-picker.gif" alt="smart-section" className='w-full h-full object-center object-cover'/>
+                  <Image src="/gif/Smart-section-picker.gif" alt="smart-section" className='w-full h-full object-center object-cover'/>
                 </div>
 
                 <div>
@@ -114,7 +115,7 @@ export default function Home() {
               {/* Custom Sections */}
               <div className='flex flex-col justify-center gap-11 lg:flex-row-reverse lg:items-end lg:gap-20'>
                 <div className="aspect-square w-full lg:w-[588px] lg:h-[588px] bg-neutral-50 rounded-xl">
-                  <img src="/gif/Custom-Sections.gif" alt="smart-section" className='w-full h-full object-center object-cover'/>
+                  <Image src="/gif/Custom-Sections.gif" alt="smart-section" className='w-full h-full object-center object-cover'/>
                 </div>
 
                 <div>
@@ -139,7 +140,7 @@ export default function Home() {
               {/* AI Summary */}
               <div className='flex flex-col justify-center gap-11 lg:flex-row-reverse lg:items-end lg:gap-20'>
                 <div className="aspect-square w-full lg:w-[588px] lg:h-[588px] bg-neutral-50 rounded-xl">
-                  <img src="/gif/AI-Summary.gif" alt="smart-section" className='w-full h-full object-center object-cover'/>
+                  <Image src="/gif/AI-Summary.gif" alt="smart-section" className='w-full h-full object-center object-cover'/>
                 </div>
 
                 <div>
@@ -163,7 +164,7 @@ export default function Home() {
               {/* All Language Support */}
               <div className='flex flex-col justify-center gap-11 lg:flex-row-reverse lg:items-end lg:gap-20'>
                 <div className="aspect-square w-full lg:w-[588px] lg:h-[588px] bg-neutral-50 rounded-xl">
-                  <img src="/gif/All-Language-Support.gif" alt="smart-section" className='w-full h-full object-center object-cover'/>
+                  <Image src="/gif/All-Language-Support.gif" alt="smart-section" className='w-full h-full object-center object-cover'/>
                 </div>
 
                 <div>
