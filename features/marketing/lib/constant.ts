@@ -55,3 +55,17 @@ export const socialMedia = [
     link: 'www.youtube.com',
   },
 ]
+
+export const animationSection = [
+  {
+    trigger: '.about',
+    startValue: 'center center',
+    bg: '#F5F5F5',
+    revert: '#FAFAFA'
+  },{
+    trigger: '.price',
+    startValue: '7000dvh center',
+    bg: '#FAFAFA',
+    revert: '#F5F5F5'
+  },
+]
