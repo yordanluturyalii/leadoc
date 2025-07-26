@@ -21,8 +21,8 @@ const Header = () => {
       y: '-79px',
       scrollTrigger: {
         trigger: 'footer',
-        start: '253% 10%',
-        end: '351% bottom',
+        start: '249% 10%',
+        end: '355% bottom',
         scrub: true,
         markers: true
       }
