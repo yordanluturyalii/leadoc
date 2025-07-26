@@ -24,7 +24,6 @@ const Header = () => {
         start: '249% 10%',
         end: '355% bottom',
         scrub: true,
-        markers: true
       }
     })
   })
