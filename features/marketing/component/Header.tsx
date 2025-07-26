@@ -16,6 +16,19 @@ const Header = () => {
   const [company, setCompany] = useState<boolean>(false);
   const [showDropdown, setShowDropdown] = useState<boolean>(false)
 
+  useGSAP(() => {
+    gsap.to('header', {
+      y: '-79px',
+      scrollTrigger: {
+        trigger: 'footer',
+        start: '253% 10%',
+        end: '351% bottom',
+        scrub: true,
+        markers: true
+      }
+    })
+  })
+
   const menuHandler = () => {
     setMenu(!menu)
   }
