@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ChevronDown, ChevronUp, Menu, X } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
-import { socialMedia } from '@/features/marketing/lib/constant';
+import { animationSection, socialMedia } from '@/features/marketing/lib/constant';
 import { ScrollTrigger, SplitText } from 'gsap/all';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
@@ -21,8 +21,8 @@ const Header = () => {
       y: '-79px',
       scrollTrigger: {
         trigger: 'footer',
-        start: '249% 10%',
-        end: '355% bottom',
+        start: '1700dvh 30%',
+        end: '2700dvh bottom',
         scrub: true,
       }
     })
