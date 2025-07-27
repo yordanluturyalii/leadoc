@@ -27,7 +27,8 @@ export default function Home() {
             <div
                 className="absolute -bottom-1 top-6 inset-0 bg-gradient-to-r from-[#B151FF] via-[#FA0011] to-[#B151FF] blur-md"
             />
-            <Link href='/' className='relative block w-fit h-[44px] py-3 px-4 bg-neutral-900 rounded-lg text-neutral-200 font-medium'>
+            <Link href='/'
+                  className='relative block w-fit h-[44px] py-3 px-4 bg-neutral-900 rounded-lg text-neutral-200 font-medium'>
               Generate Your README Now
             </Link>
           </div>
@@ -90,7 +91,9 @@ export default function Home() {
               {/* Smart Section Picker */}
               <div className='flex flex-col justify-center gap-11 lg:flex-row-reverse lg:items-end lg:gap-20'>
                 <div className="aspect-square w-full lg:w-[588px] lg:h-[588px] bg-neutral-50 rounded-xl">
-                  <Image src="/gif/Smart-section-picker.gif" alt="smart-section" className='w-full h-full object-center object-cover'/>
+                  <Image src="/gif/Smart-section-picker.gif"
+                         alt="smart-section" width={588} height={588}
+                         className='w-full h-full object-center object-cover'/>
                 </div>
 
                 <div>
@@ -115,7 +118,9 @@ export default function Home() {
               {/* Custom Sections */}
               <div className='flex flex-col justify-center gap-11 lg:flex-row-reverse lg:items-end lg:gap-20'>
                 <div className="aspect-square w-full lg:w-[588px] lg:h-[588px] bg-neutral-50 rounded-xl">
-                  <Image src="/gif/Custom-Sections.gif" alt="smart-section" className='w-full h-full object-center object-cover'/>
+                  <Image src="/gif/Custom-Sections.gif"
+                         alt="smart-section" width={588} height={588}
+                         className='w-full h-full object-center object-cover'/>
                 </div>
 
                 <div>
@@ -140,7 +145,9 @@ export default function Home() {
               {/* AI Summary */}
               <div className='flex flex-col justify-center gap-11 lg:flex-row-reverse lg:items-end lg:gap-20'>
                 <div className="aspect-square w-full lg:w-[588px] lg:h-[588px] bg-neutral-50 rounded-xl">
-                  <Image src="/gif/AI-Summary.gif" alt="smart-section" className='w-full h-full object-center object-cover'/>
+                  <Image src="/gif/AI-Summary.gif"
+                         alt="smart-section" width={588} height={588}
+                         className='w-full h-full object-center object-cover'/>
                 </div>
 
                 <div>
@@ -164,7 +171,9 @@ export default function Home() {
               {/* All Language Support */}
               <div className='flex flex-col justify-center gap-11 lg:flex-row-reverse lg:items-end lg:gap-20'>
                 <div className="aspect-square w-full lg:w-[588px] lg:h-[588px] bg-neutral-50 rounded-xl">
-                  <Image src="/gif/All-Language-Support.gif" alt="smart-section" className='w-full h-full object-center object-cover'/>
+                  <Image src="/gif/All-Language-Support.gif"
+                         alt="smart-section" width={588} height={588}
+                         className='w-full h-full object-center object-cover'/>
                 </div>
 
                 <div>
@@ -263,7 +272,8 @@ export default function Home() {
               No, Leadoc does not permanently store or sell your code. We only access your repository with your
               permission via GitHub OAuth, and your code is processed temporarily to generate documentation. The data is
               handled securely and used only for the purpose of creating README files. <br/> <br/>
-              We do not sell, share, or expose your code to third parties. Your privacy and control over your repository remain fully in your hands.
+              We do not sell, share, or expose your code to third parties. Your privacy and control over your repository
+              remain fully in your hands.
             </Accordion>
           </div>
 
@@ -289,7 +299,8 @@ export default function Home() {
                   <div
                       className="absolute -bottom-1 top-6 inset-0 bg-gradient-to-r from-[#B151FF] via-[#FA0011] to-[#B151FF] blur-md"
                   />
-                  <Link href='/' className='relative block h-[44px] py-3 px-4 bg-white rounded-lg text-neutral-900 font-medium'>
+                  <Link href='/'
+                        className='relative block h-[44px] py-3 px-4 bg-white rounded-lg text-neutral-900 font-medium'>
                     Get Started for Free
                   </Link>
                 </div>
