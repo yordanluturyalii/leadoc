@@ -13,7 +13,7 @@ export const FadingSection = ({ section, children }: { section: string, children
 
     gsap.from(titleSplit.chars, {
       opacity: 0,
-      // filter: 'blur(10px)',
+      filter: 'blur(10px)',
       stagger: 0.01,
       scrollTrigger: {
         trigger: `.${section}-section`,
@@ -24,22 +24,22 @@ export const FadingSection = ({ section, children }: { section: string, children
       },
     })
 
-    animationSection.forEach(({ trigger, startValue, bg, revert }) => {
-      ScrollTrigger.create({
-        trigger: trigger,
-        start: startValue,
-        onEnter: () => {
-          gsap.to('main, header', {
-            backgroundColor: bg,
-          })
-        },
-        onLeaveBack: () => {
-          gsap.to('main, header', {
-            backgroundColor: revert,
-          })
-        },
-      })
-    })
+    // animationSection.forEach(({ trigger, startValue, bg, revert }) => {
+    //   ScrollTrigger.create({
+    //     trigger: trigger,
+    //     start: startValue,
+    //     onEnter: () => {
+    //       gsap.to('main, header', {
+    //         backgroundColor: bg,
+    //       })
+    //     },
+    //     onLeaveBack: () => {
+    //       gsap.to('main, header', {
+    //         backgroundColor: revert,
+    //       })
+    //     },
+    //   })
+    // })
   }, [])
 
   return (
