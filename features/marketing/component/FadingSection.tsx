@@ -31,13 +31,11 @@ export const FadingSection = ({ section, children }: { section: string, children
         onEnter: () => {
           gsap.to('main, header', {
             backgroundColor: bg,
-            duration: 1.5,
           })
         },
         onLeaveBack: () => {
           gsap.to('main, header', {
             backgroundColor: revert,
-            duration: 1.5,
           })
         },
       })

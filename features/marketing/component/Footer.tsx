@@ -3,8 +3,30 @@
 import Image from 'next/image';
 import { footerCompany, footerFeatures, socialMedia } from '@/features/marketing/lib/constant';
 import Link from 'next/link';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/all';
+
+gsap.registerPlugin(ScrollTrigger)
 
 const Footer = () => {
+  // useGSAP(() => {
+  //   ScrollTrigger.create({
+  //     trigger: 'footer',
+  //     start: '-30% 40%',
+  //     onEnter: () => {
+  //       gsap.to('main, header, footer', {
+  //         backgroundColor: '#0A0A0A',
+  //       })
+  //     },
+  //     onLeaveBack: () => {
+  //       gsap.to('main, header, footer', {
+  //         backgroundColor: '#FAFAFA',
+  //       })
+  //     },
+  //   })
+  // })
+
   return (
       <footer className='footer bg-neutral-950 px-5 pt-20 pb-10 flex text-white justify-center items-center min-h-dvh'>
         <div className="w-full max-w-[1200px] flex flex-col gap-18">
