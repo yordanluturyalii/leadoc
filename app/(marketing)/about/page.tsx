@@ -2,6 +2,7 @@ import React from 'react';
 import { TitleGradient } from '@/features/marketing/component/TitleGradient';
 import { TeamCard } from '@/features/marketing/component/TeamCard';
 import { TeamAbout } from '@/features/marketing/lib/constant';
+import { CtaSection } from '@/features/marketing/component/CTASection';
 
 export default function About() {
   return (
@@ -45,6 +46,8 @@ export default function About() {
             </div>
           </div>
         </section>
+
+        <CtaSection className='bg-neutral-50'/>
       </main>
   );
 }
