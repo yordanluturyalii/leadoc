@@ -92,7 +92,7 @@ export default function Home() {
 
             <section className="flex flex-col gap-[60px]">
               {/* Smart Section Picker */}
-              <div className='flex flex-col justify-center gap-11 lg:flex-row-reverse lg:items-end lg:gap-20'>
+              <div id='smart-section-picker' className='flex flex-col justify-center gap-11 lg:flex-row-reverse lg:items-end lg:gap-20'>
                 <div className="aspect-square w-full lg:w-[588px] lg:h-[588px] bg-neutral-50 rounded-xl">
                   <Image src="/gif/Smart-section-picker.gif"
                          alt="smart-section" width={588} height={588}
@@ -121,7 +121,7 @@ export default function Home() {
               </div>
 
               {/* Custom Sections */}
-              <div className='flex flex-col justify-center gap-11 lg:flex-row-reverse lg:items-end lg:gap-20'>
+              <div id='custom-sections' className='flex flex-col justify-center gap-11 lg:flex-row-reverse lg:items-end lg:gap-20'>
                 <div className="aspect-square w-full lg:w-[588px] lg:h-[588px] bg-neutral-50 rounded-xl">
                   <Image src="/gif/Custom-Sections.gif"
                          alt="smart-section" width={588} height={588}
@@ -150,7 +150,7 @@ export default function Home() {
               </div>
 
               {/* AI Summary */}
-              <div className='flex flex-col justify-center gap-11 lg:flex-row-reverse lg:items-end lg:gap-20'>
+              <div id='ai-summary' className='flex flex-col justify-center gap-11 lg:flex-row-reverse lg:items-end lg:gap-20'>
                 <div className="aspect-square w-full lg:w-[588px] lg:h-[588px] bg-neutral-50 rounded-xl">
                   <Image src="/gif/AI-Summary.gif"
                          alt="smart-section" width={588} height={588}
@@ -178,7 +178,7 @@ export default function Home() {
               </div>
 
               {/* All Language Support */}
-              <div className='flex flex-col justify-center gap-11 lg:flex-row-reverse lg:items-end lg:gap-20'>
+              <div id='all-language-support' className='flex flex-col justify-center gap-11 lg:flex-row-reverse lg:items-end lg:gap-20'>
                 <div className="aspect-square w-full lg:w-[588px] lg:h-[588px] bg-neutral-50 rounded-xl">
                   <Image src="/gif/All-Language-Support.gif"
                          alt="smart-section" width={588} height={588}
