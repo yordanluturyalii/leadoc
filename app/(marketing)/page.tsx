@@ -6,6 +6,7 @@ import { FadingSection } from '@/features/marketing/component/FadingSection';
 import Image from 'next/image';
 import Footer from '@/features/marketing/component/Footer';
 import React from 'react';
+import { CtaSection } from '@/features/marketing/component/CTASection';
 
 export default function Home() {
   return (
@@ -71,7 +72,7 @@ export default function Home() {
         </FadingSection>
 
         {/* Futures Section */}
-        <section className="futures py-20 px-5 md:px-10 flex flex-col items-center">
+        <section id='features' className="futures py-20 px-5 md:px-10 flex flex-col items-center">
           <div className="max-w-[1200px]">
             <div className='pb-16 lg:pb-20'>
               <TitleGradient className='from-purple-100 via-green-300 to-purple-100'>

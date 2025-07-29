@@ -43,7 +43,7 @@ export const FadingSection = ({ section, children }: { section: string, children
   }, [])
 
   return (
-      <section
+      <section id={section}
           className={`${section}-section h-screen px-5 flex flex-col items-center justify-center gap-9 text-center md:px-10`}>
         {children}
       </section>
