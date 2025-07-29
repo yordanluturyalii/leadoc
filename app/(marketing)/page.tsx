@@ -4,6 +4,8 @@ import { Accordion } from '@/features/shared/components';
 import { TitleGradient } from '@/features/marketing/component/TitleGradient';
 import { FadingSection } from '@/features/marketing/component/FadingSection';
 import Image from 'next/image';
+import Footer from '@/features/marketing/component/Footer';
+import React from 'react';
 import { CtaSection } from '@/features/marketing/component/CTASection';
 
 export default function Home() {
@@ -70,7 +72,7 @@ export default function Home() {
         </FadingSection>
 
         {/* Futures Section */}
-        <section className="futures py-20 px-5 md:px-10 flex flex-col items-center">
+        <section id='features' className="futures py-20 px-5 md:px-10 flex flex-col items-center">
           <div className="max-w-[1200px]">
             <div className='pb-16 lg:pb-20'>
               <TitleGradient className='from-purple-100 via-green-300 to-purple-100'>
@@ -90,11 +92,13 @@ export default function Home() {
 
             <section className="flex flex-col gap-[60px]">
               {/* Smart Section Picker */}
-              <div className='flex flex-col justify-center gap-11 lg:flex-row-reverse lg:items-end lg:gap-20'>
+              <div id='smart-section-picker' className='flex flex-col justify-center gap-11 lg:flex-row-reverse lg:items-end lg:gap-20'>
                 <div className="aspect-square w-full lg:w-[588px] lg:h-[588px] bg-neutral-50 rounded-xl">
                   <Image src="/gif/Smart-section-picker.gif"
                          alt="smart-section" width={588} height={588}
-                         className='w-full h-full object-center object-cover'/>
+                         className='w-full h-full object-center object-cover'
+                         unoptimized
+                  />
                 </div>
 
                 <div>
@@ -117,11 +121,13 @@ export default function Home() {
               </div>
 
               {/* Custom Sections */}
-              <div className='flex flex-col justify-center gap-11 lg:flex-row-reverse lg:items-end lg:gap-20'>
+              <div id='custom-sections' className='flex flex-col justify-center gap-11 lg:flex-row-reverse lg:items-end lg:gap-20'>
                 <div className="aspect-square w-full lg:w-[588px] lg:h-[588px] bg-neutral-50 rounded-xl">
                   <Image src="/gif/Custom-Sections.gif"
                          alt="smart-section" width={588} height={588}
-                         className='w-full h-full object-center object-cover'/>
+                         className='w-full h-full object-center object-cover'
+                         unoptimized
+                  />
                 </div>
 
                 <div>
@@ -144,11 +150,13 @@ export default function Home() {
               </div>
 
               {/* AI Summary */}
-              <div className='flex flex-col justify-center gap-11 lg:flex-row-reverse lg:items-end lg:gap-20'>
+              <div id='ai-summary' className='flex flex-col justify-center gap-11 lg:flex-row-reverse lg:items-end lg:gap-20'>
                 <div className="aspect-square w-full lg:w-[588px] lg:h-[588px] bg-neutral-50 rounded-xl">
                   <Image src="/gif/AI-Summary.gif"
                          alt="smart-section" width={588} height={588}
-                         className='w-full h-full object-center object-cover'/>
+                         className='w-full h-full object-center object-cover'
+                         unoptimized
+                  />
                 </div>
 
                 <div>
@@ -170,11 +178,13 @@ export default function Home() {
               </div>
 
               {/* All Language Support */}
-              <div className='flex flex-col justify-center gap-11 lg:flex-row-reverse lg:items-end lg:gap-20'>
+              <div id='all-language-support' className='flex flex-col justify-center gap-11 lg:flex-row-reverse lg:items-end lg:gap-20'>
                 <div className="aspect-square w-full lg:w-[588px] lg:h-[588px] bg-neutral-50 rounded-xl">
                   <Image src="/gif/All-Language-Support.gif"
                          alt="smart-section" width={588} height={588}
-                         className='w-full h-full object-center object-cover'/>
+                         className='w-full h-full object-center object-cover'
+                         unoptimized
+                  />
                 </div>
 
                 <div>

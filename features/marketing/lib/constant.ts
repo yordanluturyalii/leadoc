@@ -17,29 +17,29 @@ export const header = [
 export const footerFeatures = [
   {
     name: 'Smart Section Picker',
-    link: '/',
+    link: '/#smart-section-picker',
   }, {
     name: 'Custom Sections',
-    link: '/',
+    link: '/#custom-sections',
   }, {
     name: 'AI Summary',
-    link: '/',
+    link: '/#ai-summary',
   }, {
     name: 'All Language Support',
-    link: '/',
+    link: '/#all-language-support',
   }, {
     name: 'Pricing',
-    link: '/',
+    link: '/#pricing',
   },
 ]
 
 export const footerCompany = [
   {
     name: 'About',
-    link: '/',
+    link: '/about',
   }, {
     name: 'Contact',
-    link: '/',
+    link: '/contact',
   },
 ]
 

@@ -38,8 +38,7 @@ const Header = () => {
           yValue.current = -100;
           down = 0;
         }
-      }
-      else if (delta < 0) {
+      } else if (delta < 0) {
         up -= delta;
         down = 0;
         if (up > 20 && yValue.current !== 0) {
@@ -70,9 +69,10 @@ const Header = () => {
 
   return (
       <>
-        <header className='fixed w-full top-0 left-0 z-50 flex justify-center backdrop-blur-sm'>
+        <header
+            className={`fixed w-full top-0 left-0 z-50 flex justify-center ${showDropdown || menu ? 'bg-neutral-50' : 'backdrop-blur-sm'}`}>
           <div className="w-full max-w-[1200px]">
-            <nav className="flex justify-between items-center py-5">
+            <nav className="flex justify-between items-center py-5 max-lg:px-10 ">
               <Link href='/' className='w-[161px]'>
                 <Image src='/leadoc-logo.svg' alt='leadoc' height={24} width={100}/>
               </Link>
@@ -88,12 +88,12 @@ const Header = () => {
 
               <ul className="hidden xl:flex gap-6 font-medium">
                 <li className="">
-                  <Link href='#'>
+                  <Link href='/#features'>
                     Features
                   </Link>
                 </li>
                 <li className="">
-                  <Link href='/'>
+                  <Link href='/#pricing'>
                     Pricing
                   </Link>
                 </li>
@@ -106,7 +106,7 @@ const Header = () => {
                   <HeaderHover/>
                 </li>
                 <li className="">
-                  <Link href='/'>
+                  <Link href='/changelog'>
                     Changelog
                   </Link>
                 </li>
@@ -118,7 +118,7 @@ const Header = () => {
               </div>
             </nav>
 
-            <HeaderHamburger isVisible={menu} company={company} companyHandler={companyHandler}/>
+            <HeaderHamburger isVisible={menu} menuHandler={menuHandler} company={company} companyHandler={companyHandler}/>
           </div>
         </header>
 
@@ -169,8 +169,9 @@ const HeaderHover = () => {
   )
 }
 
-const HeaderHamburger = ({ isVisible, company, companyHandler }: {
+const HeaderHamburger = ({ isVisible, menuHandler, company, companyHandler }: {
   isVisible: boolean,
+  menuHandler: () => void,
   company: boolean,
   companyHandler: () => void
 }) => {
@@ -203,9 +204,9 @@ const HeaderHamburger = ({ isVisible, company, companyHandler }: {
           className="hamburger fixed top-[64px] left-0 w-full h-[calc(100dvh-64px)] bg-white z-40 flex flex-col justify-between p-10 transition-opacity duration-700 xl:hidden overflow-hidden ease-in-out"
       >
         <ul className="flex flex-col gap-4">
-          <li><Link href='/'>Features</Link></li>
+          <li><Link href='/#features' onClick={menuHandler}>Features</Link></li>
           <div className='bg-neutral-100 h-px w-full'/>
-          <li><Link href='/'>Pricing</Link></li>
+          <li><Link href='/#pricing' onClick={menuHandler}>Pricing</Link></li>
           <div className='bg-neutral-100 h-px w-full'/>
           <button onClick={companyHandler} type='button'>
             <div className="w-full flex justify-between items-center">
@@ -216,13 +217,13 @@ const HeaderHamburger = ({ isVisible, company, companyHandler }: {
                 company ? 'grid-rows-[1fr] opacity-100 mt-7' : 'grid-rows-[0fr] opacity-0'
             }`}>
               <div className="text-left overflow-hidden text-neutral-600 font-medium flex flex-col gap-3">
-                <Link href='/about'>About</Link>
-                <Link href='/contact'>Contact</Link>
+                <Link className='cursor-pointer' onClick={menuHandler} href='/about'>About</Link>
+                <Link className='cursor-pointer' onClick={menuHandler} href='/contact'>Contact</Link>
               </div>
             </div>
           </button>
           <div className='bg-neutral-100 h-px w-full'/>
-          <li><Link href='/'>Changelog</Link></li>
+          <li><Link href='/changelog' onClick={menuHandler}>Changelog</Link></li>
         </ul>
 
         <div className="flex flex-col gap-4 w-full text-center font-semibold">
