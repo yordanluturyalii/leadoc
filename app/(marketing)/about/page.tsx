@@ -47,7 +47,7 @@ export default function About() {
           </div>
         </section>
 
-        <CtaSection className='bg-neutral-50'/>
+        <CtaSection/>
       </main>
   );
 }
