@@ -69,3 +69,27 @@ export const animationSection = [
     revert: '#F5F5F5'
   },
 ]
+
+export const TeamAbout = [
+  {
+    name: 'Ferdyan',
+    img: 'Ferdyan.png',
+    title: 'PRODUCT DESIGNER',
+    link: 'https://www.linkedin.com/in/ferdyansteevandio/'
+  },{
+    name: 'Yordan',
+    img: 'Yordan.png',
+    title: 'SOFTWARE ENGINEER',
+    link: 'https://www.linkedin.com/in/yordan-aserama-luturyali/'
+  },{
+    name: 'Al Ghaza',
+    img: 'Al-Ghaza.png',
+    title: 'SOFTWARE ENGINEER',
+    link: 'https://www.linkedin.com/in/algazza/'
+  },{
+    name: 'El Rakkai',
+    img: 'El-Rakkai.png',
+    title: 'SOFTWARE ENGINEER',
+    link: 'https://www.linkedin.com/in/el-rakkai-707262376/'
+  },
+]
