@@ -5,9 +5,9 @@ import { TeamAbout } from '@/features/marketing/lib/constant';
 
 export default function About() {
   return (
-      <>
+      <main className='overflow-hidden xl:pt-20 pt-16 bg-neutral-100'>
         {/* About Section */}
-        <section className="py-20 px-5 bg-neutral-100 h-[720px] flex justify-center md:px-10">
+        <section className="py-20 px-5 h-[720px] flex justify-center md:px-10">
           <div className='flex flex-col justify-between items-start lg:w-[1200px]'>
             <div className='grid gap-9 lg:max-w-[693px]'>
               <TitleGradient className='from-green-100 via-orange-300 to-green-100'>
@@ -32,7 +32,7 @@ export default function About() {
         </section>
 
         {/* Team Section */}
-        <section className="py-20 px-5 lg:flex justify-center md:px-10">
+        <section className="py-20 px-5 lg:flex justify-center md:px-10 bg-neutral-50">
           <div className="max-w-[1200px]">
             <h1 className="text-title-sm mb-10 md:text-title-md lg:text-title-xl">
               Say hello to our team.
@@ -45,6 +45,6 @@ export default function About() {
             </div>
           </div>
         </section>
-      </>
+      </main>
   );
 }

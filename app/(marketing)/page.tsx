@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 export default function Home() {
   return (
-      <>
+      <main className='overflow-hidden xl:pt-20 pt-16 bg-neutral-50'>
         {/* Hero Section */}
         <section className='px-5 py-20 flex flex-col gap-24 items-center md:gap-9'>
           <TitleGradient className="from-green-100 via-purple-300 to-green-100">
@@ -282,7 +282,6 @@ export default function Home() {
             <Link href='/' className='text-purple-600'>Feel free to ask.</Link>
           </span>
         </section>
-
-      </>
+      </main>
   );
 }

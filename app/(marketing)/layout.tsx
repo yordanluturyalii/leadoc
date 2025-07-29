@@ -5,11 +5,9 @@ import { CtaSection } from '@/features/marketing/component/CTASection';
 
 export default function LayoutMarketing({ children }: { children: React.ReactNode }) {
   return (
-      <div className='bg-neutral-50 text-body-md'>
+      <div className='text-body-md'>
         <Header/>
-        <main className='xl:pt-20 pt-16'>
           {children}
-        </main>
         <CtaSection/>
         <Footer/>
       </div>

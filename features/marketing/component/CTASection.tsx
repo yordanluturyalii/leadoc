@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export const CtaSection = () => {
     return (
-        <section className="py-20 px-5 md:px-10 flex justify-center">
+        <section className="py-20 px-5 md:px-10 flex justify-center bg-neutral-50">
           <div
               className="w-full max-w-[1200px] bg-[url('/bg-CTA-section.png')] bg-no-repeat bg-cover bg-center rounded-xl overflow-hidden">
             <div
@@ -24,7 +24,6 @@ export const CtaSection = () => {
                     Get Started for Free
                   </Link>
                 </div>
-
               </div>
             </div>
           </div>
