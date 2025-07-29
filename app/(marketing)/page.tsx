@@ -4,6 +4,8 @@ import { Accordion } from '@/features/shared/components';
 import { TitleGradient } from '@/features/marketing/component/TitleGradient';
 import { FadingSection } from '@/features/marketing/component/FadingSection';
 import Image from 'next/image';
+import Footer from '@/features/marketing/component/Footer';
+import React from 'react';
 
 export default function Home() {
   return (
@@ -290,6 +292,8 @@ export default function Home() {
             <Link href='/' className='text-purple-600'>Feel free to ask.</Link>
           </span>
         </section>
+
+        <CtaSection/>
       </main>
   );
 }
