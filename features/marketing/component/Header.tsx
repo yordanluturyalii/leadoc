@@ -15,18 +15,50 @@ const Header = () => {
   const [menu, setMenu] = useState<boolean>(false)
   const [company, setCompany] = useState<boolean>(false);
   const [showDropdown, setShowDropdown] = useState<boolean>(false)
+  const yValue = useRef(0)
 
   useGSAP(() => {
-    gsap.to('header', {
-      y: '-79px',
-      scrollTrigger: {
-        trigger: 'footer',
-        start: '1700dvh 30%',
-        end: '2700dvh bottom',
-        scrub: true,
+    let lastScroll = window.scrollY;
+    let down = 0;
+    let up = 0;
+
+    const handleScroll = () => {
+      const current = window.scrollY;
+      const delta = current - lastScroll;
+
+      if (delta > 0) {
+        down += delta;
+        up = 0;
+        if (down > 130 && yValue.current === 0) {
+          gsap.to('header', {
+            y: '-100%',
+            duration: 0.5,
+            ease: 'power2.out',
+          });
+          yValue.current = -100;
+          down = 0;
+        }
       }
-    })
-  })
+      else if (delta < 0) {
+        up -= delta;
+        down = 0;
+        if (up > 20 && yValue.current !== 0) {
+          gsap.to('header', {
+            y: '0%',
+            duration: 0.5,
+            ease: 'power2.out',
+          });
+          yValue.current = 0;
+          up = 0;
+        }
+      }
+
+      lastScroll = current;
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const menuHandler = () => {
     setMenu(!menu)
@@ -38,9 +70,9 @@ const Header = () => {
 
   return (
       <>
-        <header className='fixed w-full top-0 left-0 bg-neutral-50 z-50 flex justify-center'>
+        <header className='fixed w-full top-0 left-0 z-50 flex justify-center backdrop-blur-sm'>
           <div className="w-full max-w-[1200px]">
-            <nav className="flex justify-between items-center py-5 px-10">
+            <nav className="flex justify-between items-center py-5">
               <Link href='/' className='w-[161px]'>
                 <Image src='/leadoc-logo.svg' alt='leadoc' height={24} width={100}/>
               </Link>
@@ -88,7 +120,6 @@ const Header = () => {
 
             <HeaderHamburger isVisible={menu} company={company} companyHandler={companyHandler}/>
           </div>
-
         </header>
 
         <div className={`transition-all duration-300 ${
@@ -173,9 +204,9 @@ const HeaderHamburger = ({ isVisible, company, companyHandler }: {
       >
         <ul className="flex flex-col gap-4">
           <li><Link href='/'>Features</Link></li>
-          <div className='bg-neutral-100 h-px w-full' />
+          <div className='bg-neutral-100 h-px w-full'/>
           <li><Link href='/'>Pricing</Link></li>
-          <div className='bg-neutral-100 h-px w-full' />
+          <div className='bg-neutral-100 h-px w-full'/>
           <button onClick={companyHandler} type='button'>
             <div className="w-full flex justify-between items-center">
               <span>Company</span>
@@ -190,7 +221,7 @@ const HeaderHamburger = ({ isVisible, company, companyHandler }: {
               </div>
             </div>
           </button>
-          <div className='bg-neutral-100 h-px w-full' />
+          <div className='bg-neutral-100 h-px w-full'/>
           <li><Link href='/'>Changelog</Link></li>
         </ul>
 
