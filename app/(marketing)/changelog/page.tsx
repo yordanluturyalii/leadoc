@@ -8,8 +8,8 @@ export default function ChanglogPage() {
   return (
       <main className='overflow-hidden xl:pt-20 pt-16 bg-neutral-100'>
         {/* About Section */}
-        <section className='px-5 py-10 flex flex-col justify-center items-center md:px-10 md:py-20'>
-          <div className="max-w-[1200px]">
+        <section className='px-5 py-10 flex flex-col justify-center lg:items-center md:px-10 md:py-20'>
+          <div className="flex flex-col items-start lg:w-[1200px] ">
             <TitleGradient className='from-green-100 via-orange-300 to-green-100 mb-9'>
               Changelog
             </TitleGradient>
@@ -27,7 +27,7 @@ export default function ChanglogPage() {
         </section>
 
         {/* Update Section */}
-        <section className="px-5 py-20 bg-neutral-50 flex flex-col justify-center items-center gap-10">
+        <section className="px-5 py-20 bg-neutral-50 flex flex-col justify-center items-center gap-10 md:px-10">
           <section className="flex flex-col gap-6 max-w-[1200px] lg:flex-row lg:gap-10">
             <p className="font-medium text-neutral-600 w-[200px]">
               July 8, 2025
