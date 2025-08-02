@@ -36,7 +36,7 @@ export const Select = ({
         <div className="relative">
           <button className='w-full' onClick={() => setIsOpen(!isOpen)} type="button">
             <div
-                className="w-full flex justify-between items-center h-11 rounded-lg px-3 py-2.5 transition bg-white text-neutral-900 font-medium border border-neutral-200">
+                className="w-full flex justify-between items-center h-11 cursor-pointer rounded-lg px-3 py-2.5 transition bg-white text-neutral-900 font-medium border border-neutral-200">
               <span>{value}</span>
               {isOpen ? <ChevronUp color="#171717"/> : <ChevronDown color="#171717"/>}
             </div>
