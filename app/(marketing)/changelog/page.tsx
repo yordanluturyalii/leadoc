@@ -10,7 +10,7 @@ export default function ChanglogPage() {
         {/* About Section */}
         <section className='px-5 py-10 flex flex-col justify-center lg:items-center md:px-10 md:py-20'>
           <div className="flex flex-col items-start lg:w-[1200px] ">
-            <TitleGradient className='from-green-100 via-orange-300 to-green-100 mb-9'>
+            <TitleGradient className='from-green-100 via-orange-300 to-green-100'>
               Changelog
             </TitleGradient>
 
