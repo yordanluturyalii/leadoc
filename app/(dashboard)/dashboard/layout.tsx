@@ -2,6 +2,7 @@
 
 import Button from "@/features/shared/components/Button";
 import Navbar from "@/features/shared/components/Navbar";
+import ProfileModal from "@/features/shared/components/ProfileModal";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import React from "react";
@@ -19,7 +20,8 @@ export default function DashboardLayout({ children }: Readonly<{ children: React
                     <Button isDark={false} type="button" handleClick={() => router.push('/dashboard')} icon={"/arrow-left.svg"} isDisable={false} className="p-2" children={"Dashboard"} /> :
                     <Image src={"/leadoc-logo.svg"} alt="Leadoc" width={110} height={24} />
             } />
-            <div className="w-full h-[calc(100vh-84px)] overflow-y-auto bg-neutral-50 border border-neutral-100 px-3 mt-2 pb-3 rounded-2xl">
+            <div className="w-full h-[calc(100vh-84px)] overflow-y-auto bg-neutral-50 border border-neutral-100 px-3 mt-2 pb-3 rounded-2xl relative">
+                <ProfileModal />
                 {children}
             </div>
         </div>

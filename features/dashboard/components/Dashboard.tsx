@@ -13,9 +13,9 @@ const Dashboard = () => {
         return () => clearTimeout(timer);
     }, []);
     return (
-        <div className="w-full px-3 md:px-4 pb-3 md:pb-4">
-            <div className="w-full h-auto px-2 mt-2 sm:px-3 sm:mt-3 bg-white rounded-2xl border border-neutral-100">
-                <div className="p-3 md:p-4 flex flex-col gap-1">
+        <div className="w-full">
+            <div className="w-full h-auto px-2 mt-2 pb-4 sm:px-4 sm:mt-4 bg-white rounded-2xl border border-neutral-100">
+                <div className="my-4 lg:my-4 flex flex-col gap-1">
                     <h1 className="text-neutral-900 text-title-xxs font-semibold">Connected Repositories</h1>
                     <span className="text-body-md font-medium text-neutral-500">All your connected GitHub repositories</span>
                 </div>
