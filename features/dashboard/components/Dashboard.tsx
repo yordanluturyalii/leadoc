@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 
 const Dashboard = () => {
     const [loading, setLoading] = useState<boolean>(true);
-    const isConnected = false;
+    const isConnected = true;
 
     useEffect(() => {
         const timer = setTimeout(() => setLoading(false), 2000);

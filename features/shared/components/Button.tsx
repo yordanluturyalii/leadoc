@@ -9,11 +9,12 @@ type ButtonProps = {
   type: "button" | "reset" | "submit";
   isDisable: boolean;
   isDark: boolean;
+  isDanger?: boolean;
   handleClick?: () => void;
   className?: string
 }
 
-const Button = ({children, icon, type, isDisable, isDark, handleClick, className}: ButtonProps) => {
+const Button = ({children, icon, type, isDisable, isDark, handleClick, isDanger, className}: ButtonProps) => {
   return (
       <button
           type={type}
@@ -22,7 +23,7 @@ const Button = ({children, icon, type, isDisable, isDark, handleClick, className
         {
             icon && <Image src={icon} alt={`${icon} Icon`} width={24} height={24} />
         }
-        <span className={`text-body-md font-semibold ${isDark ? "text-white" : "text-neutral-900" }`}>{children}</span>
+        <span className={`text-body-md font-semibold ${isDark ? "text-white" : isDanger ? 'text-red-600' : "text-neutral-900" }`}>{children}</span>
       </button>
   )
 }
