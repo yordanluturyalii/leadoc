@@ -14,7 +14,7 @@ export default function DashboardLayout({ children }: Readonly<{ children: React
     const isDashboardRoot = pathname === '/dashboard'
 
     return (
-        <div className="bg-white min-h-screen w-full max-w-screen h-full p-3">
+        <div className="bg-white min-h-screen w-full max-w-screen h-full p-3 relative">
             <Navbar title={
                 !isDashboardRoot ?
                     <Button isDark={false} type="button" handleClick={() => router.push('/dashboard')} icon={"/arrow-left.svg"} isDisable={false} className="p-2" children={"Dashboard"} /> :

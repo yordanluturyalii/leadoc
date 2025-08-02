@@ -5,7 +5,7 @@ import { useStoreModal } from '../hooks/useStoreModal'
 const ProfileModal = () => {
     const isOpen = useStoreModal((state) => state.isOpen);
     return (
-        <div className={`w-60 h-auto bg-white border border-neutral-200 rounded-xl ${isOpen ? 'flex' : 'hidden'} flex-col absolute right-3 top-3`}>
+        <div className={`w-60 h-auto bg-white border border-neutral-200 rounded-xl ${isOpen ? 'flex' : 'hidden'} flex-col fixed right-6 top-20`}>
             <div className="p-3 border-b border-neutral-100">
                 <span className='text-neutral-900 text-body-md font-medium'>johndoe@gmail.com</span>
             </div>
