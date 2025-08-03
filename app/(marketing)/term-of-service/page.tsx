@@ -17,7 +17,7 @@ export default function TermPage() {
             </h1>
 
             <p className="text-neutral-500 mt-5">
-              Last updated:
+              Last updated: {' '}
               <span className='font-medium text-neutral-900'> July 9, 2025</span>
             </p>
           </div>
