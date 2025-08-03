@@ -10,7 +10,7 @@ const DeleteProfileForm = () => {
                     <span className="text-body-xl font-semibold text-neutral-900">Delete Account</span>
                     <span className="text-body-md font-medium text-neutral-500">Deleting your account will permanently remove all associated data from our systems. This action is final and cannot be undone.</span>
                 </label>
-                <div className="w-44">
+                <div className="w-1/2">
                     <Button isDanger={true} isDark={false} type="button" handleClick={() => alert("Delete Profile")} icon={"/trash.svg"} isDisable={false} className="p-2">
                         Delete Profile
                     </Button>
