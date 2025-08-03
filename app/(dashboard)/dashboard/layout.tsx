@@ -2,10 +2,11 @@
 
 import Button from "@/features/shared/components/Button";
 import Navbar from "@/features/shared/components/Navbar";
-import ProfileModal from "@/features/shared/components/ProfileModal";
+import ProfileModal from "@/features/dashboard/components/ProfileModal";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import React from "react";
+import PricingModal from "@/features/dashboard/components/PricingModal";
 
 export default function DashboardLayout({ children }: Readonly<{ children: React.ReactNode }>) {
     const pathname = usePathname()
@@ -15,6 +16,7 @@ export default function DashboardLayout({ children }: Readonly<{ children: React
 
     return (
         <div className="bg-white min-h-screen w-full max-w-screen h-full p-3 relative">
+            <PricingModal />
             <Navbar title={
                 !isDashboardRoot ?
                     <Button isDark={false} type="button" handleClick={() => router.push('/dashboard')} icon={"/arrow-left.svg"} isDisable={false} className="p-2" children={"Dashboard"} /> :

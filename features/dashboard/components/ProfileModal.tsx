@@ -1,11 +1,11 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { useStoreModal } from '../hooks/useStoreModal'
+import { useStoreModal } from '../../shared/hooks/useStoreModal'
 
 const ProfileModal = () => {
-    const isOpen = useStoreModal((state) => state.isOpen);
+    const {profileOpen, setPricingOpen, pricingOpen} = useStoreModal();
     return (
-        <div className={`w-60 h-auto bg-white border border-neutral-200 rounded-xl ${isOpen ? 'flex' : 'hidden'} flex-col fixed right-6 top-20`}>
+        <div className={`w-60 h-auto bg-white border border-neutral-200 rounded-xl ${profileOpen ? 'flex' : 'hidden'} flex-col fixed right-6 top-20`}>
             <div className="p-3 border-b border-neutral-100">
                 <span className='text-neutral-900 text-body-md font-medium'>johndoe@gmail.com</span>
             </div>
@@ -16,7 +16,7 @@ const ProfileModal = () => {
                         <Image src={'/credits-icon.svg'} alt='image coin' width={18} height={18} />
                         <span className='text-body-md font-semibold text-neutral-900'>10</span>
                     </div>
-                    <button className='text-purple-600 text-body-md font-bold cursor-pointer'>Buy More</button>
+                    <button className='text-purple-600 text-body-md font-bold cursor-pointer' onClick={() => setPricingOpen(!pricingOpen)}>Buy More</button>
                 </div>
             </div>
             <div className="px-3 py-2.5">
