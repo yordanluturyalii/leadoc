@@ -18,7 +18,7 @@ const Button = ({children, icon, type, isDisable, isDark, handleClick, isDanger,
   return (
       <button
           type={type}
-          className={`${isDark ? 'bg-neutral-900' : 'bg-white border border-neutral-200 hover:bg-neutral-50'} cursor-pointer rounded-xl ${className} ${icon && children ? "flex items-center justify-center gap-2.5" : ""}`}
+          className={`${isDark ? 'bg-neutral-900' : isDisable ? 'bg-neutral-100 border border-e-neutral-200 text-neutral-400' : 'bg-white border border-neutral-200 hover:bg-neutral-50'} cursor-pointer rounded-xl ${className} ${icon && children ? "flex items-center justify-center gap-2.5" : ""}`}
           onClick={handleClick}>
         {
             icon && <Image src={icon} alt={`${icon} Icon`} width={24} height={24} />
