@@ -355,7 +355,8 @@ export default function TermPage() {
                 <p>
                   If you have any questions, feedback, or legal inquiries related to these Terms or your use of the Leadoc platform, please contact us through our official communication channels:
                   <br/> <br/>
-                  Email:                   <span
+                  Email:
+                  <span
                     className="text-purple-600 underline">
                     <Link href='mailto:team@leadoc.io'>team@leadoc.io</Link>
                   </span>
