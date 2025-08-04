@@ -6,7 +6,7 @@ import { CtaSection } from '@/features/marketing/component/CTASection';
 export default function TermPage() {
   return (
       <main className='overflow-hidden xl:pt-20 pt-16 bg-neutral-100'>
-        <section className="py-10 px-5 flex justify-center md:px-10 md:py-20">
+        <section className="py-10 px-5 flex lg:justify-center md:px-10 md:py-20">
           <div className='flex flex-col justify-between items-start lg:w-[1200px]'>
             <TitleGradient className='from-green-100 via-orange-300 to-green-100'>
               Term of Service
