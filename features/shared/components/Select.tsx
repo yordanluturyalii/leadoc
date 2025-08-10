@@ -1,14 +1,8 @@
 "use client";
 
 import { ChevronDown, ChevronUp } from 'lucide-react';
-import React, { createContext, useContext, useState, ReactNode } from 'react';
-
-type SelectContextType = {
-  setValue: React.Dispatch<React.SetStateAction<string>>;
-  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
-};
-
-const SelectContext = createContext<SelectContextType | undefined>(undefined);
+import React, { useContext, ReactNode } from 'react';
+import { useSelectStore } from '@/features/marketing/store/selectStore';
 
 export const Select = ({
                          label,
@@ -19,8 +13,9 @@ export const Select = ({
   name: string;
   children: ReactNode;
 }) => {
-  const [value, setValue] = useState<string>('Select one option');
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const value = useSelectStore((state) => state.value)
+  const isOpen = useSelectStore((state) => state.isOpen)
+  const toggleOpen = useSelectStore((state) => state.toggleOpen)
 
   return (
       <div className="flex flex-col gap-1 relative">
@@ -34,7 +29,7 @@ export const Select = ({
         </div>
 
         <div className="relative">
-          <button className='w-full' onClick={() => setIsOpen(!isOpen)} type="button">
+          <button className='w-full' onClick={toggleOpen} type="button">
             <div
                 className="w-full flex justify-between items-center h-11 cursor-pointer rounded-lg px-3 py-2.5 transition bg-white text-neutral-900 font-medium border border-neutral-200">
               <span>{value}</span>
@@ -47,9 +42,7 @@ export const Select = ({
                 }`}
             >
               <div className="text-left overflow-hidden font-medium flex flex-col gap-1">
-                <SelectContext.Provider value={{ setValue, setIsOpen }}>
-                  {children}
-                </SelectContext.Provider>
+                {children}
               </div>
             </div>
           </button>
@@ -59,17 +52,12 @@ export const Select = ({
 };
 
 export const SelectItem = ({ children }: { children: string }) => {
-  const context = useContext(SelectContext);
-
-  if (!context) {
-    throw new Error("SelectItem must be used within a <Select>");
-  }
-
-  const { setValue, setIsOpen } = context;
+  const changeValue = useSelectStore((state) => state.changeValue)
+  const toggleOpen = useSelectStore((state) => state.toggleOpen)
 
   const handleClick = () => {
-    setValue(children);
-    setIsOpen(false);
+    changeValue(children);
+    toggleOpen
   };
 
   return (
