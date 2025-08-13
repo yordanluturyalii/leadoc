@@ -4,14 +4,7 @@ import { Draggable } from '@/features/shared';
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import { AdditionalList } from '@/features/generate-readme/components/AdditionalList';
-
-const draggableItem = [
-  'Title and Description',
-  'Usage',
-  'Installation',
-  'License',
-  'Contributing'
-]
+import { useDraggable } from '@/features/shared/hooks/useDraggable';
 
 function useIsDesktop() {
   const [isDesktop, setIsDesktop] = useState(false);
@@ -30,6 +23,8 @@ function useIsDesktop() {
 export const SidebarReadme = () => {
   const [show, setShow] = useState(false)
   const isDekstop = useIsDesktop();
+
+  const draggableItem = useDraggable((state) => state.data)
 
   return (
       <div
@@ -57,6 +52,7 @@ export const SidebarReadme = () => {
                   </div>
                 </div>
               </div>
+
 
               <Draggable dataItem={draggableItem}/>
 
