@@ -11,7 +11,7 @@ export default function LoginPage() {
 
   return (
       <div className="flex justify-between w-full h-full gap-2.5">
-        <div className='w-full lg:w-1/2 h-full bg-neutral-50 border-[1px] border-neutral-200 md:p-20 rounded-3xl p-5'>
+        <div className='w-full lg:w-1/2 h-full bg-neutral-50 border-[1px] border-neutral-200 py-5 px-4 md:p-20 rounded-3xl'>
           <div className="mb-10">
             <Image src={'/leadoc-logo.png'} alt='Leadoc' width={110} height={24}/>
           </div>
@@ -20,7 +20,7 @@ export default function LoginPage() {
             <p className="text-body-md text-neutral-500">Sign in to your account</p>
           </div>
 
-          <Button icon='/github.png' type='button' isDisable={false} isDark={false}>
+          <Button icon='/github.png' type='button' isDisable={false} isDark={false} className='w-full py-3'>
             Continue With Github
           </Button>
 
@@ -36,10 +36,10 @@ export default function LoginPage() {
 
             <div className="w-fit">
               <Link
-                  className='w-full p-2 bg-white border border-neutral-200 hover:bg-neutral-50 rounded-xl text-body-md font-semibold'
-                  href='/login'
+                  className='max-md:text-body-sm w-full p-2 bg-white border border-neutral-200 hover:bg-neutral-50 rounded-xl text-body-md font-semibold'
+                  href='/register'
               >
-                Back to Sign in
+                Create Account
               </Link>
             </div>
           </div>

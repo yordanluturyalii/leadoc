@@ -36,7 +36,7 @@ const LoginForm = () => {
         />
 
         <div className="mt-2">
-          <Button type='submit' isDisable={!isValid || isLoading || disabled} isDark={true}>
+          <Button type='submit' isDisable={false} isDark={true} className='py-3 w-full'>
             Continue
           </Button>
         </div>
