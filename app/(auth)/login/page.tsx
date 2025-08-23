@@ -20,7 +20,7 @@ export default function LoginPage() {
             <p className="text-body-md text-neutral-500">Sign in to your account</p>
           </div>
 
-          <Button icon='/github.png' type='button' isDisable={false} isDark={false} className='w-full py-3'>
+          <Button icon='/github.png' type='button' isDisable={false} isDark={false} className='w-full h-[44px]'>
             Continue With Github
           </Button>
 
