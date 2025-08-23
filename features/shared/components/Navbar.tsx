@@ -14,8 +14,8 @@ const Navbar = ({ title }: NavbarProps) => {
     <nav className="w-full h-12 bg-whiterounded-lg px-4 py-3 flex justify-between items-center">
       {title}
       <div className="flex gap-2">
-        <Button isDark={false} type="button" handleClick={() => setPricingOpen(!pricingOpen)} icon={"/coins.svg"} isDisable={false} children={"10 Credits"} className="px-2 py-[7px]" />
-        <Button isDark={false} type="button" handleClick={() => setProfileOpen(!profileOpen)} icon={"/user-circle.svg"} isDisable={false} className="px-2 py-[7px]" />
+        <Button isDark={false} type="button" handleClick={() => setPricingOpen(!pricingOpen)} icon={"/coins.svg"} isDisable={false} children={"10 Credits"} className="px-2 py-[7px] cursor-pointer" />
+        <Button isDark={false} type="button" handleClick={() => setProfileOpen(!profileOpen)} icon={"/user-circle.svg"} isDisable={false} className="px-2 py-[7px] cursor-pointer" />
       </div>
     </nav>
   )

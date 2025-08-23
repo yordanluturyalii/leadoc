@@ -114,7 +114,7 @@ const Header = () => {
 
               <div className="hidden xl:flex gap-4 items-center font-semibold">
                 <Link href='/login' className="py-2 px-3 border border-neutral-200 rounded-lg">Sign in</Link>
-                <Link href='/signup' className="py-2 px-3 bg-neutral-900 rounded-lg text-white">Sign Up</Link>
+                <Link href='/register' className="py-2 px-3 bg-neutral-900 rounded-lg text-white">Sign Up</Link>
               </div>
             </nav>
 
@@ -228,7 +228,7 @@ const HeaderHamburger = ({ isVisible, menuHandler, company, companyHandler }: {
 
         <div className="flex flex-col gap-4 w-full text-center font-semibold">
           <Link href='/login' className="py-2 border border-neutral-200 rounded-lg">Sign in</Link>
-          <Link href='/signup' className="py-2 bg-neutral-900 rounded-lg text-white">Sign Up</Link>
+          <Link href='/register' className="py-2 bg-neutral-900 rounded-lg text-white">Sign Up</Link>
         </div>
       </div>
   )

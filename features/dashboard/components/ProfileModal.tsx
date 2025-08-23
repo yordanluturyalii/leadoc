@@ -13,7 +13,7 @@ const ProfileModal = () => {
                 <span className='text-neutral-500 text-body-md font-medium'>Credits</span>
                 <div className="flex justify-between">
                     <div className="flex gap-2">
-                        <Image src={'/credits-icon.svg'} alt='image coin' width={18} height={18} />
+                        <Image src={'/coins.svg'} alt='image coin' width={18} height={18} />
                         <span className='text-body-md font-semibold text-neutral-900'>10</span>
                     </div>
                     <button className='text-purple-600 text-body-md font-bold cursor-pointer' onClick={() => setPricingOpen(!pricingOpen)}>Buy More</button>

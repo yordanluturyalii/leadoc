@@ -22,7 +22,12 @@ const Register = () => {
                         <h1 className="text-title-md text-neutral-900">Create Account</h1>
                         <p className="text-body-md font-medium text-neutral-500">Turn your repository into clean documentation with just one click</p>
                     </div>
-                    <Button icon="/github.png" text="Continue With Github" handleClick={handleGithubAuth} isDark={false} isDisable={false} type="button" />
+                    <Button handleClick={handleGithubAuth} isDark={false} isDisable={false} type="button" className="w-full py-4 flex justify-center items-center gap-4 cursor-pointer">
+                        <div className="flex gap-4">
+                            <Image src={"/github.png"} width={24} height={24} alt="Github Icon" />
+                            <span>Continue With Github</span>
+                        </div>
+                    </Button>
                     <div className="my-6 w-full">
                         <div className="w-full">
                             <div className="flex items-center gap-4">
@@ -40,7 +45,9 @@ const Register = () => {
                     <div className="flex items-center gap-2">
                         <span className="text-body-md font-medium text-neutral-500">Already have an account?</span>
                         <div className="w-16">
-                            <Button text="Sign In" isDark={false} isDisable={false} type="button" handleClick={() => console.log("halow")} />
+                            <Button isDark={false} isDisable={false} type="button" handleClick={() => console.log("halow")} className="mx-auto px-2 py-1 cursor-pointer">
+                                Sign In
+                            </Button>
                         </div>
                     </div>
                 </div>

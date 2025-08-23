@@ -12,7 +12,7 @@ const PricingModal = () => {
             <div className="relative bg-white p-7 rounded-xl shadow-lg z-10">
                 <div className="flex justify-between items-center mb-8">
                     <span className="text-[20px] font-semibold">Buy Credits As Needed</span>
-                    <Button isDark={false} isDisable={false} type="button" className="p-3" handleClick={() => setPricingOpen(!pricingOpen)}>
+                    <Button isDark={false} isDisable={false} type="button" className="p-3 cursor-pointer" handleClick={() => setPricingOpen(!pricingOpen)}>
                         <X width={20} height={20} />
                     </Button>
                 </div>

@@ -1,7 +1,7 @@
 'use client';
 
 import Button from "@/features/shared/components/Button";
-import RepoCard from "./RepoCard"
+import RepoCard from "./RepoCard";
 import { useEffect, useState } from "react";
 
 const Dashboard = () => {

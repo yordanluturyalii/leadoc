@@ -33,14 +33,14 @@ const RegisterForm = () => {
         },
         onError: (error) => {
             if (error?.errors && Object.keys(error?.errors).length > 0) {
-                Object.entries(error?.errors).forEach(([index, {type, message}]: [string, any]) => {
+                Object.entries(error?.errors).forEach(([index, { type, message }]: [string, any]) => {
                     const fieldMap: { [key: string]: keyof RegisterData } = {
                         'name': 'name',
                         'email': 'email',
                         'password': 'password',
                         'password_confirmation': 'passwordConfirmation'
                     };
-                    
+
                     const formField = fieldMap['email'];
                     console.log(formField);
                     if (formField) {
@@ -85,7 +85,9 @@ const RegisterForm = () => {
                 error={errors.passwordConfirmation?.message}
             />
             <div className="mt-2">
-                <Button type="submit" isDisable={!isValid || isLoading || disabled} isDark={true} text="Create Account" handleClick={() => { }} />
+                <Button type="submit" isDisable={!isValid || isLoading || disabled} isDark={true} handleClick={() => { }} className="w-full py-3 cursor-pointer">
+                    Create Account
+                </Button>
             </div>
         </form>
     )
