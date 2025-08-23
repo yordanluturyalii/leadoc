@@ -22,7 +22,9 @@ const Register = () => {
                         <h1 className="text-title-md text-neutral-900">Create Account</h1>
                         <p className="text-body-md font-medium text-neutral-500">Turn your repository into clean documentation with just one click</p>
                     </div>
-                    <Button icon="/github.png" text="Continue With Github" handleClick={handleGithubAuth} isDark={false} isDisable={false} type="button" />
+                    <Button icon="/github.png" handleClick={handleGithubAuth} isDark={false} isDisable={false} type="button" className='h-[44px] w-full'>
+                      Continue With Github
+                    </Button>
                     <div className="my-6 w-full">
                         <div className="w-full">
                             <div className="flex items-center gap-4">
@@ -44,7 +46,7 @@ const Register = () => {
                         </div>
                     </div>
                 </div>
-                <div className="hidden w-1/2 h-full lg:flex flex-col justify-end rounded-3xl p-6">
+                <div className="hidden w-1/2 min-h-full lg:flex flex-col justify-end rounded-3xl p-6">
                     <div className="flex flex-col gap-6">
                         <div className="flex items-center gap-1">
                             <span className="text-title-xl font-semibold text-neutral-900">4.8</span>

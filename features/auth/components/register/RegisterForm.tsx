@@ -40,7 +40,7 @@ const RegisterForm = () => {
                         'password': 'password',
                         'password_confirmation': 'passwordConfirmation'
                     };
-                    
+
                     const formField = fieldMap['email'];
                     console.log(formField);
                     if (formField) {
@@ -85,7 +85,9 @@ const RegisterForm = () => {
                 error={errors.passwordConfirmation?.message}
             />
             <div className="mt-2">
-                <Button type="submit" isDisable={!isValid || isLoading || disabled} isDark={true} text="Create Account" handleClick={() => { }} />
+                <Button type="submit" isDisable={!isValid || isLoading || disabled} isDark={true} handleClick={() => { }} className='h-[44px] w-full'>
+                  Create Account
+                </Button>
             </div>
         </form>
     )
