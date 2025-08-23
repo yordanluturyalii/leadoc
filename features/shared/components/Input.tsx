@@ -52,7 +52,7 @@ const Input = ({
           </label>
           {isForgotPassword && (
               <Link
-                  href='/'
+                  href='/forgot-password'
                   className="text-body-md font-medium text-purple-600"
               >
                 Forgot Password?
