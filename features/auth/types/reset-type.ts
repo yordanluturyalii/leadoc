@@ -1,6 +1,6 @@
 import z from "zod";
 
-export const ResetSchema = zobject({
+export const ResetSchema = z.object({
     email: z.string().email(),
     new_password: z.string(),
     token: z.string()
