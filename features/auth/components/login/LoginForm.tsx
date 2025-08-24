@@ -10,7 +10,6 @@ import { useRouter } from 'next/navigation';
 import { useMutation } from '@tanstack/react-query';
 import { api } from '@/features/shared';
 
-``
 const loginUser = async (data: any) => {
   const response = await api.post("/api/auth/login", data);
   return response.data;
