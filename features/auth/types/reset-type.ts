@@ -1,7 +1,10 @@
 import z from "zod";
 
-export const ForgotSchema = z.object({
-  email: z.string().email(),
-});
+export const ResetSchema = zobject({
+    email: z.string().email(),
+    new_password: z.string(),
+    token: z.string()
+})
 
-export type ForgotPassword = z.infer<typeof ForgotSchema>;
+export type ResetPassword = z.infer<typeof ResetSchema>;
+

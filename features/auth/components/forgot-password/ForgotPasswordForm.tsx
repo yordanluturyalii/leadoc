@@ -9,7 +9,7 @@ import { api } from "@/features/shared";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
-import { ForgotPassword, ForgotSchema } from "../../types/reset-type";
+import { ForgotPassword, ForgotSchema } from "../../types/forgot-type";
 
 const forgotPassword = async (data: ForgotPassword) => {
   const response = await api.post("/api/auth/send-email", data);
