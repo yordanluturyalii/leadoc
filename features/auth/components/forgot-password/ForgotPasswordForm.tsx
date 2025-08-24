@@ -10,6 +10,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
 import { ForgotPassword, ForgotSchema } from "../../types/forgot-type";
+import { useEmail } from "@/features/shared/hooks/useEmail";
 
 const forgotPassword = async (data: ForgotPassword) => {
   const response = await api.post("/api/auth/send-email", data);
@@ -17,6 +18,8 @@ const forgotPassword = async (data: ForgotPassword) => {
 };
 
 const ForgotPasswordForm = () => {
+  const setEmail = useEmail((state) => state.setEmail)
+  
   const {
     register,
     handleSubmit,
@@ -38,6 +41,7 @@ const ForgotPasswordForm = () => {
 
   const onSubmit: SubmitHandler<ForgotPassword> = async (data) => {
     mutation.mutate(data);
+    setEmail(data.email)
   };
 
   return (
@@ -53,12 +57,13 @@ const ForgotPasswordForm = () => {
         label="Email"
         {...register("email")}
         error={errors.email?.message}
+        isDisabled={mutation.isPending}
       />
 
       <div className="mt-2">
         <Button
           type="submit"
-          isDisable={isLoading || !isValid || disabled}
+          isDisable={mutation.isPending || !isValid || disabled}
           isDark={true}
           className="w-full h-[44px]"
         >
