@@ -7,15 +7,9 @@ import Toast from "@/features/shared/components/Toast";
 import { TriangleAlert } from "lucide-react";
 import { api } from "@/features/shared";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
-
-const ForgotSchema = z.object({
-  email: z.string().email(),
-});
-
-type ForgotPassword = z.infer<typeof ForgotSchema>;
+import { ForgotPassword, ForgotSchema } from "../../types/reset-type";
 
 const forgotPassword = async (data: ForgotPassword) => {
   const response = await api.post("/api/auth/send-email", data);
