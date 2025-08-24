@@ -3,9 +3,13 @@
 import Image from 'next/image';
 import ResetPasswordForm from '@/features/auth/components/reset-password/ResetPasswordForm';
 import Link from 'next/link';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+
+const queryClient = new QueryClient()
 
 const ResetPassword = () => {
   return (
+    <QueryClientProvider client={queryClient}>
       <div className='w-full lg:w-1/2 h-full bg-neutral-50 border-[1px] border-neutral-200 md:p-20 rounded-3xl p-5'>
         <div className="mb-10">
           <Image src={'/leadoc-logo.svg'} alt='Leadoc' width={110} height={24}/>
@@ -26,6 +30,7 @@ const ResetPassword = () => {
           </Link>
         </div>
       </div>
+    </QueryClientProvider>
   );
 };
 
