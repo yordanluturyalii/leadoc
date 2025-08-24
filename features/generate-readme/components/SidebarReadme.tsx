@@ -40,7 +40,7 @@ export const SidebarReadme = () => {
 
         {(isDekstop || show) && (
             <>
-              <div className="relative">
+              {/* <div className="relative">
                 <div
                     className="absolute -bottom-1 top-6 inset-0 bg-gradient-to-r from-[#B151FF] via-[#FA0011] to-[#B151FF] blur-md"
                 />
@@ -51,7 +51,7 @@ export const SidebarReadme = () => {
                     <span className="font-semibold text-body-xl">10</span>
                   </div>
                 </div>
-              </div>
+              </div> */}
 
 
               <Draggable dataItem={draggableItem}/>

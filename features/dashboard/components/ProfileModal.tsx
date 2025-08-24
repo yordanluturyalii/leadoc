@@ -1,20 +1,32 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useStoreModal } from '../../shared/hooks/useStoreModal'
+import { useQuery } from '@tanstack/react-query'
+import { api } from '@/features/shared'
 
 const ProfileModal = () => {
-    const {profileOpen, setPricingOpen, pricingOpen} = useStoreModal();
+    const { isPending, error, data } = useQuery({
+        queryKey: ['me'],
+        queryFn: async () => {
+            const response = await api.get('/api/user/me');
+            return response.data;
+        },
+        retry: 1,
+        staleTime: 5 * 60 * 1000
+    });
+    const { profileOpen, setPricingOpen, pricingOpen } = useStoreModal();
+
     return (
         <div className={`w-60 h-auto bg-white border border-neutral-200 rounded-xl ${profileOpen ? 'flex' : 'hidden'} flex-col fixed right-6 top-20`}>
             <div className="p-3 border-b border-neutral-100">
-                <span className='text-neutral-900 text-body-md font-medium'>johndoe@gmail.com</span>
+                <span className='text-neutral-900 text-body-md font-medium'>{data?.data?.user?.email || "user@gmail.com"}</span>
             </div>
             <div className="p-3 flex flex-col gap-1 border-b border-neutral-100">
                 <span className='text-neutral-500 text-body-md font-medium'>Credits</span>
                 <div className="flex justify-between">
                     <div className="flex gap-2">
                         <Image src={'/coins.svg'} alt='image coin' width={18} height={18} />
-                        <span className='text-body-md font-semibold text-neutral-900'>10</span>
+                        <span className='text-body-md font-semibold text-neutral-900'>{data?.data?.user?.coin || 0}</span>
                     </div>
                     <button className='text-purple-600 text-body-md font-bold cursor-pointer' onClick={() => setPricingOpen(!pricingOpen)}>Buy More</button>
                 </div>

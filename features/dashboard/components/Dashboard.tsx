@@ -2,7 +2,6 @@
 
 import Button from "@/features/shared/components/Button";
 import RepoCard from "./RepoCard";
-import { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { api } from "@/features/shared";
 
@@ -16,7 +15,6 @@ const Dashboard = () => {
         retry: 1,
         staleTime: 5 * 60 * 1000
     })
-    console.log(data);
 
     const isConnected = data?.message && data?.data && data?.data?.length > 0;
     const hasGithubConnection = data?.data && !data?.error;
@@ -25,6 +23,10 @@ const Dashboard = () => {
     const handleGithub = () => {
         window.location.replace("http://localhost:3001/api/auth");
     }
+
+    const handleRepoClick = (repo: any) => {
+        window.location.href = `/dashboard/generate-readme`;
+    };
 
     const renderContent = () => {
         if (isPending) {
@@ -44,7 +46,7 @@ const Dashboard = () => {
                 <Button
                     isDark={false}
                     type="button"
-                    handleClick={() => { }}
+                    handleClick={() => handleGithub()}
                     icon={"/github.png"}
                     isDisable={false}
                     className="px-3 py-2 mt-4"
@@ -80,7 +82,7 @@ const Dashboard = () => {
                     <Button
                         isDark={false}
                         type="button"
-                        handleClick={() => ""}
+                        handleClick={() => handleGithub()}
                         icon={"/github.png"}
                         isDisable={false}
                         className="px-3 py-2 mt-4"
@@ -126,7 +128,7 @@ const Dashboard = () => {
                         visibility={repo.visibility ? "Private" : "Public"}
                         status={repo.hasReadme || false}
                         updatedAt={repo.updatedAt ? new Date(repo.updatedAt) : undefined}
-                        handleClick={() => ""}
+                        handleClick={() => handleRepoClick(repo)}
                     />
                 ))}
             </div>
