@@ -41,6 +41,7 @@ const RegisterForm = () => {
                         'password_confirmation': 'passwordConfirmation'
                     };
 
+
                     const formField = fieldMap['email'];
                     console.log(formField);
                     if (formField) {
