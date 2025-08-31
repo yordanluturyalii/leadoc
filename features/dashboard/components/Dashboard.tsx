@@ -24,10 +24,6 @@ const Dashboard = () => {
         window.location.replace("http://localhost:3001/api/auth");
     }
 
-    const handleRepoClick = (repo: any) => {
-        window.location.href = `/dashboard/generate-readme`;
-    };
-
     const renderContent = () => {
         if (isPending) {
             return (
@@ -92,33 +88,6 @@ const Dashboard = () => {
             );
         }
 
-        if (hasGithubConnection && repositories.length === 0) {
-            return (
-                <div className="flex flex-col items-center justify-center w-full h-[180px] bg-neutral-50 border border-dashed border-neutral-200 rounded-lg">
-                    <span className="text-neutral-900 text-body-xl font-semibold">No Repositories Found</span>
-                    <span className="text-neutral-500 text-body-md font-medium">You don't have any repositories yet. Create one on GitHub to get started.</span>
-                    <div className="flex gap-2 mt-4">
-                        <Button
-                            isDark={true}
-                            type="button"
-                            handleClick={() => ""}
-                            isDisable={false}
-                            className="px-3 py-2"
-                            children="Refresh"
-                        />
-                        <Button
-                            isDark={false}
-                            type="button"
-                            handleClick={() => window.open('https://github.com/new', '_blank')}
-                            isDisable={false}
-                            className="px-3 py-2"
-                            children="Create Repository"
-                        />
-                    </div>
-                </div>
-            );
-        }
-
         return (
             <div className="grid gap-3 grid-cols-1 sm:grid-cols-3 lg:grid-cols-5">
                 {repositories.map((repo: any) => (
@@ -128,7 +97,7 @@ const Dashboard = () => {
                         visibility={repo.visibility ? "Private" : "Public"}
                         status={repo.hasReadme || false}
                         updatedAt={repo.updatedAt ? new Date(repo.updatedAt) : undefined}
-                        handleClick={() => handleRepoClick(repo)}
+                        url={repo.name}
                     />
                 ))}
             </div>

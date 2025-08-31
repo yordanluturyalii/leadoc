@@ -1,10 +1,11 @@
 "use client"
 
-import { Draggable } from '@/features/shared';
+import { api, Draggable } from '@/features/shared';
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import { AdditionalList } from '@/features/generate-readme/components/AdditionalList';
 import { useDraggable } from '@/features/shared/hooks/useDraggable';
+import { useParams } from 'next/navigation';
 
 function useIsDesktop() {
   const [isDesktop, setIsDesktop] = useState(false);
@@ -19,28 +20,28 @@ function useIsDesktop() {
   return isDesktop;
 }
 
-
 export const SidebarReadme = () => {
+  const params = useParams();
   const [show, setShow] = useState(false)
   const isDekstop = useIsDesktop();
 
   const draggableItem = useDraggable((state) => state.data)
 
   return (
+    <div
+      className='bg-neutral-100 border border-neutral-200 rounded-xl p-3 md:w-[320px] h-full md:h-[calc(100dvh-180px)] overflow-scroll'
+    >
+      <h1 className="text-body-xl font-semibold md:mb-4">Sections</h1>
       <div
-          className='bg-neutral-100 border border-neutral-200 rounded-xl p-3 md:w-[320px] h-full md:h-[calc(100dvh-180px)] overflow-scroll'
+        onClick={() => setShow(!show)}
+        className="md:hidden bg-neutral-50 border border-neutral-200 py-[7px] font-semibold text-body-sm text-center w-full rounded-lg mb-4"
       >
-        <h1 className="text-body-xl font-semibold md:mb-4">Sections</h1>
-        <div
-            onClick={() => setShow(!show)}
-            className="md:hidden bg-neutral-50 border border-neutral-200 py-[7px] font-semibold text-body-sm text-center w-full rounded-lg mb-4"
-        >
-          {show ? 'Hide Sections' : 'Show Sections'}
-        </div>
+        {show ? 'Hide Sections' : 'Show Sections'}
+      </div>
 
-        {(isDekstop || show) && (
-            <>
-              {/* <div className="relative">
+      {(isDekstop || show) && (
+        <>
+          {/* <div className="relative">
                 <div
                     className="absolute -bottom-1 top-6 inset-0 bg-gradient-to-r from-[#B151FF] via-[#FA0011] to-[#B151FF] blur-md"
                 />
@@ -54,11 +55,11 @@ export const SidebarReadme = () => {
               </div> */}
 
 
-              <Draggable dataItem={draggableItem}/>
+          <Draggable dataItem={draggableItem} />
 
-              <AdditionalList/>
-            </>
-        )}
-      </div>
+          <AdditionalList />
+        </>
+      )}
+    </div>
   );
 };

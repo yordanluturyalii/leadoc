@@ -1,18 +1,19 @@
 'use client';
 
 import { formatDistanceToNow } from "date-fns"
+import Link from "next/link";
 
 type RepoCardProps = {
     name: string;
     visibility: "Private" | "Public";
     status: boolean;
     updatedAt?: Date;
-    handleClick?: () => void;
+    url: string;
 }
 
-const RepoCard = ({ name, visibility, status, updatedAt, handleClick }: RepoCardProps) => {
+const RepoCard = ({ name, visibility, status, updatedAt, url }: RepoCardProps) => {
     return (
-        <div className="border border-neutral-100 bg-white flex flex-col gap-3 justify-between w-full sm:h-[118px] h-28 p-3 rounded-xl cursor-pointer" onClick={handleClick}>
+        <Link href={`/dashboard/generate-readme/${url}`} className="border border-neutral-100 bg-white flex flex-col gap-3 justify-between w-full sm:h-[118px] h-28 p-3 rounded-xl cursor-pointer">
             <div className="flex flex-col">
                 <h1 className="text-neutral-900 font-semibold text-body-xl">{name}</h1>
                 <span className="text-neutral-500 text-body-sm font-medium">{visibility} repository</span>
@@ -33,7 +34,7 @@ const RepoCard = ({ name, visibility, status, updatedAt, handleClick }: RepoCard
                     )
                 }
             </div>
-        </div>
+        </Link>
     )
 }
 

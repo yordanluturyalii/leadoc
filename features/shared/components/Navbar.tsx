@@ -3,23 +3,15 @@
 import Button from "@/features/shared/components/Button"
 import React from "react"
 import { useStoreModal } from "../hooks/useStoreModal"
-import { useQuery } from "@tanstack/react-query"
-import { api } from "../hooks/useApi"
+import { useCurrentUser } from "../hooks/useCurrentUser"
 
 type NavbarProps = {
   title: React.ReactNode
 }
 
 const Navbar = ({ title }: NavbarProps) => {
-  const { isPending, error, data } = useQuery({
-    queryKey: ['me'],
-    queryFn: async () => {
-      const response = await api.get('/api/user/me');
-      return response.data;
-    },
-    retry: 1,
-    staleTime: 5 * 60 * 1000
-  });
+  const { isPending, error, data } = useCurrentUser();
+
   const { profileOpen, setProfileOpen, pricingOpen, setPricingOpen } = useStoreModal();
   return (
     <nav className="w-full h-12 bg-whiterounded-lg px-4 py-3 flex justify-between items-center">

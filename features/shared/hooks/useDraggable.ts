@@ -1,22 +1,21 @@
 import { create } from 'zustand';
 
 const additionalList = [
-  'Acknowledgements',
-  'API Reference',
-  'Appendix',
-  'Authors',
-  'Badges',
-  'Color Reference',
-  'Deployment',
-  'Documentation',
-  'Environment Variables',
-  'FAQ',
-  'Features',
-  'Title and Description',
-  'Usage',
-  'Installation',
-  'License',
-  'Contributing'
+  'api-reference',
+  // 'Authors',
+  'badges',
+  // 'Color Reference',
+  'deployment',
+  // 'Documentation',
+  'environment-variables',
+  'faq',
+  'features',
+  'title',
+  'usage',
+  'installation',
+  'license',
+  'tech',
+  'architecture'
 ]
 
 type DraggableState = {

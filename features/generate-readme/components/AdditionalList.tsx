@@ -6,7 +6,6 @@ export const AdditionalList = () => {
   const sectionData = useDraggable((state) => state.sectionData);
   const addToList = useDraggable((state) => state.addToData)
 
-  console.log(sectionData);
   return (
       <div className='bg-neutral-200 p-2 rounded-lg grid gap-1 mt-4'>
             <span className="px-3 py-1 font-semibold text-body-sm">

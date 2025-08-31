@@ -43,7 +43,7 @@ export const Draggable = ({ dataItem }: { dataItem: string[] }) => {
               className='bg-neutral-200 p-2 rounded-lg grid gap-1.5'
           >
             {todoItems.map((item, i) => (
-                <li key={i} id={i} draggable
+                <li key={i} id={String(i)} draggable
                     className="bg-white py-[10px] px-2 flex justify-between rounded-lg cursor-pointer">
                   <div className='flex items-center gap-2'>
                     <Image src='/Grip.svg' alt='grip' width={18} height={18}/>

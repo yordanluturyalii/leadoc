@@ -1,23 +1,14 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useStoreModal } from '../../shared/hooks/useStoreModal'
-import { useQuery } from '@tanstack/react-query'
-import { api } from '@/features/shared'
+import { useCurrentUser } from '@/features/shared/hooks/useCurrentUser'
 
 const ProfileModal = () => {
-    const { isPending, error, data } = useQuery({
-        queryKey: ['me'],
-        queryFn: async () => {
-            const response = await api.get('/api/user/me');
-            return response.data;
-        },
-        retry: 1,
-        staleTime: 5 * 60 * 1000
-    });
+    const { isPending, error, data} = useCurrentUser();
     const { profileOpen, setPricingOpen, pricingOpen } = useStoreModal();
 
     return (
-        <div className={`w-60 h-auto bg-white border border-neutral-200 rounded-xl ${profileOpen ? 'flex' : 'hidden'} flex-col fixed right-6 top-20`}>
+        <div className={`w-60 h-auto bg-white border border-neutral-200 rounded-xl z-50 ${profileOpen ? 'flex' : 'hidden'} flex-col fixed right-6 top-20`}>
             <div className="p-3 border-b border-neutral-100">
                 <span className='text-neutral-900 text-body-md font-medium'>{data?.data?.user?.email || "user@gmail.com"}</span>
             </div>
