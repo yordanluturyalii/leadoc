@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: process.env.BACKEND_URL || "http://localhost:3001",
+  baseURL: process.env.BACKEND_URL || "http://72.60.74.198",
   timeout: 10000,
   withCredentials: true,
   headers: {

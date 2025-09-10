@@ -32,8 +32,9 @@ const LoginForm = () => {
       router.push("/dashboard");
     },
     onError: (error) => {
-      if (error?.errors && Object.keys(error?.errors).length > 0) {
-        Object.entries(error?.errors).forEach(
+      let err = error as any;
+      if (err?.errors && Object.keys(err?.errors).length > 0) {
+        Object.entries(err?.errors).forEach(
           ([field, { message }]: [string, any]) => {
             const fieldMap: { [key: string]: keyof LoginData } = {
               email: "email",

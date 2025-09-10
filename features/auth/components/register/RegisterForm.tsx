@@ -32,24 +32,25 @@ const RegisterForm = () => {
             route.push("/dashboard");
         },
         onError: (error) => {
-            if (error?.errors && Object.keys(error?.errors).length > 0) {
-                Object.entries(error?.errors).forEach(([index, { type, message }]: [string, any]) => {
+            const err = error as any;
+
+            if (err?.errors && Object.keys(err.errors).length > 0) {
+                Object.entries(err.errors).forEach(([field, { message }]: [string, any]) => {
                     const fieldMap: { [key: string]: keyof RegisterData } = {
-                        'name': 'name',
-                        'email': 'email',
-                        'password': 'password',
-                        'password_confirmation': 'passwordConfirmation'
+                        name: "name",
+                        email: "email",
+                        password: "password",
+                        password_confirmation: "passwordConfirmation",
                     };
 
-
-                    const formField = fieldMap['email'];
-                    console.log(formField);
+                    const formField = fieldMap[field];
                     if (formField) {
                         setError(formField, { message });
                     }
                 });
             }
         }
+
     })
 
     const onSubmit = async (data: RegisterData) => {

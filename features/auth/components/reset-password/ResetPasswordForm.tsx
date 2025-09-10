@@ -42,8 +42,9 @@ const ResetPasswordForm = () => {
       router.push("/login");
     },
     onError: (error) => {
-      if (error?.errors && Object.keys(error?.errors).length > 0) {
-        Object.entries(error?.errors).forEach(
+      let err = error as any;
+      if (err?.errors && Object.keys(err?.errors).length > 0) {
+        Object.entries(err?.errors).forEach(
           ([field, { type, message }]: [string, any]) => {
             const fieldMap: { [key: string]: keyof ResetPassword } = {
               new_password: "new_password",
