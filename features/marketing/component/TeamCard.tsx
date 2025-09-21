@@ -18,7 +18,7 @@ export const TeamCard = ({name, img, link, title}: {name: string, img: string, t
             {title}
           </p>
 
-          <Link href={link} className='text-neutral-600 underline'>Linkedin</Link>
+          <Link href={link} target='_blank' className='text-neutral-600 underline'>Linkedin</Link>
         </div>
       </div>
   );

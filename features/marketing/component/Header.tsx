@@ -70,7 +70,7 @@ const Header = () => {
   return (
       <>
         <header
-            className={`fixed w-full top-0 left-0 z-50 flex justify-center ${showDropdown || menu ? 'bg-neutral-50' : 'backdrop-blur-sm'}`}>
+            className={`fixed w-full top-0 left-0 z-50 flex justify-center ${showDropdown || menu ? 'bg-white' : 'backdrop-blur-sm'}`}>
           <div className="w-full max-w-[1200px]">
             <nav className="flex justify-between items-center py-5 max-lg:px-10 ">
               <Link href='/' className='w-[161px]'>
@@ -136,18 +136,18 @@ const HeaderHover = () => {
       >
         <div className="w-full max-w-[1200px] flex justify-between">
           <div>
-            <h3 className="text-neutral-500 pl-2">COMPANY</h3>
+            <h3 className="text-[#737373] pl-2">COMPANY</h3>
             <div className="flex gap-14 mt-6">
               <Link href='/about' className="group hover:bg-neutral-100 duration-500 p-2 w-[400px]">
                 <h3 className="mb-3">About</h3>
-                <p className="text-neutral-500 group-hover:text-neutral-900 duration-500">
+                <p className="text-[#737373] group-hover:text-neutral-900 duration-500">
                   Discover what sparked Leadoc and how we're helping developers write better READMEs with less
                   effort.
                 </p>
               </Link>
               <Link href='/contact' className="group hover:bg-neutral-100 duration-500 p-2 w-[350px]">
                 <h3 className="mb-3">Contact</h3>
-                <p className="text-neutral-500 group-hover:text-neutral-900 duration-500">
+                <p className="text-[#737373] group-hover:text-neutral-900 duration-500">
                   Have questions, feedback, or just want to say hi? We’d love to hear from you.
                 </p>
               </Link>
@@ -155,7 +155,7 @@ const HeaderHover = () => {
           </div>
 
           <div className='w-[160px]'>
-            <h3 className="text-neutral-500">SOCIALS</h3>
+            <h3 className="text-[#737373]">SOCIALS</h3>
             <ul className='mt-7 flex flex-col gap-2'>
               {socialMedia.map((social) => (
                   <li key={social.name}>

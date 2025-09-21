@@ -68,7 +68,7 @@ const Footer = () => {
             <ul className="flex gap-6">
               {socialMedia.map((social) => (
                   <li key={social.name}>
-                    <Link href={social.link}>{social.name}</Link>
+                    <Link href={social.link} target='_blank'>{social.name}</Link>
                   </li>
               ))}
             </ul>
@@ -83,7 +83,7 @@ const Footer = () => {
                 </li>
               </ul>
 
-              <span>@ Leadoc 2025</span>
+              <span className='text-[#D4D4D4]'>@ Leadoc 2025</span>
             </div>
           </div>
         </div>

@@ -19,7 +19,7 @@ export const CtaSection = ({className}: {className?: string}) => {
                 <div
                     className="absolute -bottom-1 top-6 inset-0 bg-gradient-to-r from-[#B151FF] via-[#FA0011] to-[#B151FF] blur-md"
                 />
-                <Link href='/'
+                <Link href='/register'
                       className='relative block h-[44px] py-3 px-4 bg-white rounded-lg text-neutral-900 font-medium'>
                   Get Started for Free
                 </Link>

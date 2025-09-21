@@ -28,7 +28,7 @@ export default function ContactPage() {
 
           <div className="flex justify-center items-center gap-6">
             {socialMedia.map((item) => (
-                <Link key={item.name} href={item.link}>{item.name}</Link>
+                <Link key={item.name} target='_blank' href={item.link}>{item.name}</Link>
             ))}
           </div>
         </section>

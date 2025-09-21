@@ -46,13 +46,13 @@ export const footerCompany = [
 export const socialMedia = [
   {
     name: 'LinkedIn',
-    link: 'www.linkedin.com',
+    link: 'https://www.linkedin.com/company/interlandstudio',
   }, {
     name: 'Instagram',
     link: 'www.instagram.com',
   }, {
     name: 'Youtube',
-    link: 'www.youtube.com',
+    link: 'https://youtube.com',
   },
 ]
 
