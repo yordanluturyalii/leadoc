@@ -21,7 +21,7 @@ const Dashboard = () => {
     const repositories = data?.data || [];
 
     const handleGithub = () => {
-        window.location.replace("http://localhost:3001/api/auth");
+        window.location.replace("http://72.60.74.198/api/auth");
     }
 
     const renderContent = () => {
