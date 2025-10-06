@@ -5,12 +5,13 @@ import Button from '@/features/shared/components/Button';
 import LoginForm from '@/features/auth/components/login/LoginForm';
 import Link from 'next/link';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { backendUrl } from '@/features/marketing/lib/constant';
 
 const queryClient = new QueryClient();
 
 const Login = () => {
   const handleGithubAuth = async () => {
-    window.location.replace('http://localhost:3001/api/auth')
+    window.location.replace(`${backendUrl}/api/auth`)
   }
 
   return (
@@ -26,7 +27,7 @@ const Login = () => {
               <p className="text-body-md text-neutral-500">Sign in to your account</p>
             </div>
 
-            <Button icon='/github.png' type='button' isDisable={false} isDark={false} className='w-full h-[44px]'>
+            <Button icon='/github.png' type='button' isDisable={false} isDark={false} className='w-full h-[44px]' handleClick={handleGithubAuth}>
               Continue With Github
             </Button>
 
@@ -65,7 +66,7 @@ const Login = () => {
               It saves time and keeps our docs consistent."
             </span>
               <span
-                  className="text-body-xl text-neutral-900 font-semibold">John Doe, Backend Engineer @Interland.co</span>
+                  className="text-body-xl text-neutral-900 font-semibold">Daniel Rivera, Backend Engineer @Interland.co</span>
             </div>
           </div>
         </div>

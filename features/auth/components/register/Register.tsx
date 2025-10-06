@@ -4,13 +4,14 @@ import Button from "@/features/shared/components/Button"
 import Image from "next/image"
 import RegisterForm from "./RegisterForm"
 import { QueryClient, QueryClientProvider, useMutation } from "@tanstack/react-query"
+import { backendUrl } from "@/features/marketing/lib/constant"
+import Link from "next/link"
 
 const queryClient = new QueryClient();
 
 const Register = () => {
-
     const handleGithubAuth = async () => {
-        window.location.replace("http://localhost:3001/api/auth");
+        window.location.replace(`${backendUrl}/api/auth`)
     }
 
     return (
@@ -40,14 +41,18 @@ const Register = () => {
                     </div>
                     <RegisterForm />
                     <div className="my-6">
-                        <span className="text-body-md font-medium text-neutral-500">By creating an account you agree to our <span className="text-purple-600">Terms of Service</span> and <span className="text-purple-600">Privacy Policy</span></span>
+                        <span className="text-body-md font-medium text-neutral-500">By creating an account you agree to our <Link href={"/term-of-service"} className="text-purple-600">Terms of Service</Link> and <Link href={"/privacy-policy"} className="text-purple-600">Privacy Policy</Link></span>
                     </div>
-                    <div className="flex items-center gap-2">
-                        <span className="text-body-md font-medium text-neutral-500">Already have an account?</span>
-                        <div className="w-16">
-                            <Button isDark={false} isDisable={false} type="button" handleClick={() => console.log("halow")} className="mx-auto px-2 py-1 cursor-pointer">
+                    <div className="flex items-center gap-2 mt-6">
+                        <span className="text-body-md text-neutral-500">Already have an account?</span>
+
+                        <div className="w-fit">
+                            <Link
+                                className='max-md:text-body-sm w-full p-2 bg-white border border-neutral-200 hover:bg-neutral-50 rounded-xl text-body-md font-semibold'
+                                href='/login'
+                            >
                                 Sign In
-                            </Button>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -60,7 +65,7 @@ const Register = () => {
                         <span className="w-full text-title-xxs text-neutral-600">
                             "As a developer, I struggled to keep documentation updated with repository changes. Since using this GitHub automation tool, my workflow is more efficient. Every pull request generates clean, updated docs automatically. I can focus on building features instead of formatting documentation. It saves time and keeps our docs consistent."
                         </span>
-                        <span className="text-body-xl text-neutral-900 font-semibold">John Doe, Backend Engineer @Interland.co</span>
+                        <span className="text-body-xl text-neutral-900 font-semibold">Daniel Rivera, Backend Engineer @Interland.co</span>
                     </div>
                 </div>
             </div>

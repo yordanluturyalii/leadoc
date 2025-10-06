@@ -93,3 +93,5 @@ export const TeamAbout = [
     link: 'https://www.linkedin.com/in/el-rakkai-707262376/'
   },
 ]
+
+export const backendUrl = "http://72.60.74.198";
